@@ -1,6 +1,28 @@
 {% extends "contests/base.html" %}
 
+{% load thumbnail %}
+
 
 {% block content %}
+
+<h1>Winners</h1>
+
+{% regroup winners by contest as contests %}
+
+{% for contest in contests %}
+<h2>{{ contest.grouper }}</h2>
+<ul>
+	{% for winner in contest.list %}
+	<li>
+		{% thumbnail winner.photo "100x100" as photo %}
+		<img src="{{ photo.url }}" alt="{{ winner.name }}" />
+		{% empty %}
+		<p>No Photo</p>
+		{% endthumbnail %}
+		<p>{{ winner.name }}</p>
+	</li>
+	{% endfor %}
+</ul>
+{% endfor %}
 
 {% endblock %}
