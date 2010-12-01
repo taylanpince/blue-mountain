@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect, Http404
@@ -9,10 +9,16 @@ from contests.forms import ContestEntryForm
 from contests.models import Contest, ContestEntry, ContestWinner
 
 
+CONTEST_COOKIE_KEY = "BLUEMOUNTAIN_CONTEST"
+
+
 def enter(request):
     """
     Renders and processes contest entry page
     """
+    if request.COOKIES.has_key(CONTEST_COOKIE_KEY):
+        return HttpResponseRedirect(reverse("contests_share"))
+
     try:
         now = datetime.now()
         contest = Contest.objects.filter(
@@ -35,7 +41,14 @@ def enter(request):
             contest_entry.contest = contest
             contest_entry.save()
 
-            return HttpResponseRedirect(reverse("contests_share"))
+            response = HttpResponseRedirect(reverse("contests_share"))
+            delta = contest.end_date - datetime.now()
+            max_age = (delta.days * 24 * 60 * 60) + delta.seconds
+            expiry = datetime.strftime(contest.end_date, "%a, %d-%b-%Y %H:%M:%S GMT")
+
+            response.set_cookie(CONTEST_COOKIE_KEY, value="True", max_age=max_age, expires=expiry)
+
+            return response
     else:
         form = ContestEntryForm()
 
