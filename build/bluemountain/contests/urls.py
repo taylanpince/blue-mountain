@@ -1,0 +1,9 @@
+from django.conf.urls.defaults import *
+
+
+urlpatterns = patterns('contests.views',
+    url(r'^$', 'enter', name='contests_enter'),
+    url(r'^share/$', 'share', name='contests_share'),
+    url(r'^rules/$', 'rules', name='contests_rules'),
+    url(r'^winners/$', 'winners', name='contests_winners'),
+)

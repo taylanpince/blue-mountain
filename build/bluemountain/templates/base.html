@@ -23,6 +23,14 @@
 
 <body id="top" class="{% block class %}{% endblock %}">
 
+	<ul id="Navigation">
+		<li><a href="{% url home %}">Home</a></li>
+		<li><a href="{% url contests_enter %}">Enter</a></li>
+		<li><a href="{% url contests_rules %}">Rules</a></li>
+		<li><a href="{% url contests_winners %}">Winners</a></li>
+		<li><a href="{% url home %}">Photos</a></li>
+	</ul>
+
 	<div id="Container">
 		{% block content %}{% endblock %}
 	</div>

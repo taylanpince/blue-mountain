@@ -11,4 +11,14 @@ urlpatterns = patterns('',
 
     # Admin
     (r'^admin/', include(admin.site.urls)),
+    
+    # Contests
+    (r'^contest/', include('contests.urls')),
+)
+
+urlpatterns += patterns('django.views.generic.simple',
+    # Home
+    url(r"^$", "direct_to_template", {
+        "template": "home.html",
+    }, name="home"),
 )
