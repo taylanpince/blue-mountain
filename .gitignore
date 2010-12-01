@@ -1,5 +1,6 @@
 docs/build
 build/bluemountain/media/admin
 build/bluemountain/media/files
+build/bluemountain/media/cache
 build/bluemountain/settings_local.py
 *.pyc
