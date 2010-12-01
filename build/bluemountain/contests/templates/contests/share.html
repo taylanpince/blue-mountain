@@ -5,4 +5,16 @@
 
 {% block content %}
 <h1>Thanks for Entering the Contest</h1>
+
+{{ formset.non_form_errors }}
+
+<form method="post" action="{% url contests_share %}">
+	{% csrf_token %}
+	{{ formset.management_form }}
+	{% for form in formset.forms %}
+	{{ form.as_p }}
+	{% endfor %}
+	<p><input type="submit" value="Send" /></p>
+</form>
+
 {% endblock %}

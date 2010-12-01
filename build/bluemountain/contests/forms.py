@@ -35,3 +35,29 @@ class ContestEntryForm(forms.ModelForm):
             raise forms.ValidationError(_("Please make sure both emails match."))
 
         return self.cleaned_data
+
+
+class EmailForm(forms.Form):
+    """
+    A form with a single email field
+    """
+    email = forms.EmailField(_("Email"))
+
+
+class ValidatingFormSet(forms.formsets.BaseFormSet):
+    """
+    A FormSet that makes sure there is at least one object in it
+    """
+    def clean(self):
+        cleaned_data = super(ValidatingFormSet, self).clean()
+        has_object = False
+
+        for form in self.forms:
+            if hasattr(form, 'cleaned_data'):
+                if form.cleaned_data and not form.cleaned_data.get("DELETE", False):
+                    has_object = True
+
+        if not has_object:
+            raise forms.ValidationError(_(u"You have to enter at least one email."))
+
+        return cleaned_data

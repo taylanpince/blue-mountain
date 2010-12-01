@@ -1,0 +1,3 @@
+Enter Blue Mountain's contest and WIN!
+
+http://{{ site.domain }}
