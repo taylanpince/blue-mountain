@@ -1,0 +1,4 @@
+{% if contest %}
+{% load contest_tags %}
+<p>Countdown to next flight: {{ contest.start_date|countdown }}</p>
+{% endif %}
