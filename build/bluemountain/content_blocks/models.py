@@ -16,3 +16,18 @@ class ContentBlock(models.Model):
 
     def __unicode__(self):
         return self.title
+
+
+class Photo(models.Model):
+    """
+    A photo with a caption
+    """
+    image = models.ImageField(_("Image"), upload_to="files/photos")
+    caption = models.CharField(_("Caption"), blank=True, max_length=255)
+
+    class Meta:
+        verbose_name = _("Photo")
+        verbose_name_plural = _("Photos")
+
+    def __unicode__(self):
+        return self.caption
