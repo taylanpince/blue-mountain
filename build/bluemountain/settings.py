@@ -59,6 +59,7 @@ INSTALLED_APPS = (
     'south',
 
     'content_blocks',
+    'contests',
 )
 
 try:
