@@ -7,6 +7,7 @@ from django.template import RequestContext
 
 from contests.forms import ContestEntryForm
 from contests.models import Contest, ContestEntry, ContestWinner
+from content_blocks.models import Photo
 
 
 CONTEST_COOKIE_KEY = "BLUEMOUNTAIN_CONTEST"
@@ -83,4 +84,15 @@ def winners(request):
 
     return render_to_response("contests/winners.html", {
         "winners": winners,
+    }, context_instance=RequestContext(request))
+
+
+def photos(request):
+    """
+    Renders photos
+    """
+    photos = Photo.objects.all()
+
+    return render_to_response("contests/photos.html", {
+        "photos": photos,
     }, context_instance=RequestContext(request))

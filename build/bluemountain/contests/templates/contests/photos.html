@@ -1,0 +1,26 @@
+{% extends "contests/base.html" %}
+
+{% load thumbnail %}
+{% load content_blocks_tags %}
+
+
+{% block content %}
+
+<h1>Photos</h1>
+
+{% content_block "photos" %}
+
+<ul>
+	{% for photo in photos %}
+	<li>
+		{% thumbnail photo.image "100x100" as image %}
+		<a href="{{ photo.image.url }}"><img src="{{ image.url }}" alt="{{ photo.caption }}" /></a>
+		{% empty %}
+		<p>No Photo</p>
+		{% endthumbnail %}
+		<p>{{ photo.caption }}</p>
+	</li>
+	{% endfor %}
+</ul>
+
+{% endblock %}

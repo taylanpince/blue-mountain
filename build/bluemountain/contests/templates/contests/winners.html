@@ -1,11 +1,14 @@
 {% extends "contests/base.html" %}
 
 {% load thumbnail %}
+{% load content_blocks_tags %}
 
 
 {% block content %}
 
 <h1>Winners</h1>
+
+{% content_block "contest-winners" %}
 
 {% regroup winners by contest as contests %}
 
