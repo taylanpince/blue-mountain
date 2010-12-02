@@ -12,4 +12,4 @@ DATABASES = {
     }
 }
 
-MEDIA_URL = '/media/'
+MEDIA_URL = 'http://media.lovewinterturnblue.ca/'
