@@ -20,19 +20,22 @@ class ContestEntryForm(forms.ModelForm):
         exclude = ("contest", "entry_date")
 
     def clean(self):
-        try:
-            duplicate_entry = ContestEntry.objects.get(
-                email__iexact=self.cleaned_data.get("email"),
-                contest=self.contest,
-            )
-        except ContestEntry.DoesNotExist:
-            duplicate_entry = None
+        self.cleaned_data = super(ContestEntryForm, self).clean()
 
-        if duplicate_entry is not None:
-            raise forms.ValidationError(_("You cannot participate in this week's contest more than once."))
+        if self.cleaned_data.get("email", None):
+            try:
+                duplicate_entry = ContestEntry.objects.get(
+                    email__iexact=self.cleaned_data.get("email"),
+                    contest=self.contest,
+                )
+            except ContestEntry.DoesNotExist:
+                duplicate_entry = None
 
-        if self.cleaned_data.get("email") != self.cleaned_data.get("email_confirm"):
-            raise forms.ValidationError(_("Please make sure both emails match."))
+            if duplicate_entry is not None:
+                raise forms.ValidationError(_("You cannot participate in this week's contest more than once."))
+
+            if self.cleaned_data.get("email") != self.cleaned_data.get("email_confirm"):
+                raise forms.ValidationError(_("Please make sure both emails match."))
 
         return self.cleaned_data
 
