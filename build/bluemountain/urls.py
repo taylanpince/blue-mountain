@@ -21,4 +21,19 @@ urlpatterns += patterns('django.views.generic.simple',
     url(r"^$", "direct_to_template", {
         "template": "home.html",
     }, name="home"),
+
+    # Privacy Policy
+    url(r"^privacy-policy/$", "direct_to_template", {
+        "template": "privacy.html",
+    }, name="privacy"),
+
+    # Terms & Conditions
+    url(r"^terms/$", "direct_to_template", {
+        "template": "terms.html",
+    }, name="terms"),
+
+    # Contact
+    url(r"^contact/$", "direct_to_template", {
+        "template": "contact.html",
+    }, name="contact"),
 )

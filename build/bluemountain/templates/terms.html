@@ -1,10 +1,9 @@
 {% extends "base.html" %}
 
-{% load contest_tags %}
 {% load content_block_tags %}
 
+{% block title %}Terms &amp; Conditions{% endblock %}
 
 {% block content %}
-{% content_block "home" %}
-{% contest_countdown %}
+{% content_block "terms-conditions" %}
 {% endblock %}
