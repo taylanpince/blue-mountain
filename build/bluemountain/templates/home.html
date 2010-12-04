@@ -3,8 +3,61 @@
 {% load contest_tags %}
 {% load content_block_tags %}
 
+{% block js %}
+<script type="text/javascript" src="http://us1.resorts-interactive.com/tools/swf.js"></script>
+<script type="text/javascript" src="http://widgets.twimg.com/j/2/widget.js"></script>
+{% endblock %}
+
 
 {% block content %}
 {% content_block "home" %}
 {% contest_countdown %}
+
+<script type="text/javascript">
+//<![CDATA[
+	putSWF(
+		"http://us1.resorts-interactive.com/vicosite/widget.swf", 
+		280, 320, 8, "image", 
+		"http://us1.resorts-interactive.com/images/getFlashPlayer.png", 
+		"&clientID=481&id=6741&prefix=http://us1.resorts-interactive.com/", 
+		"widget_6741", 
+		"transparent", 
+		"#FFFFFF"
+	);
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+	new TWTR.Widget({
+		version: 2,
+		type: 'profile',
+		rpp: 3,
+		interval: 6000,
+		width: 260,
+		height: 200,
+		theme: {
+			shell: {
+				background: 'transparent',
+				color: '#5c5c5c'
+			},
+			tweets: {
+				background: 'transparent',
+				color: '#8a8a8a',
+				links: '#eb9007'
+			}
+		},
+		features: {
+			scrollbar: true,
+			loop: false,
+			live: true,
+			hashtags: true,
+			timestamp: true,
+			avatars: false,
+			behavior: 'all'
+		}
+	}).render().setUser('BlueMtnResort').start();
+//]]>
+</script>
+
 {% endblock %}
