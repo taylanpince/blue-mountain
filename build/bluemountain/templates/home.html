@@ -2,6 +2,7 @@
 
 {% load contest_tags %}
 {% load content_block_tags %}
+{% load event_tags %}
 
 {% block js %}
 <script type="text/javascript" src="http://us1.resorts-interactive.com/tools/swf.js"></script>
@@ -59,5 +60,7 @@
 	}).render().setUser('BlueMtnResort').start();
 //]]>
 </script>
+
+{% upcoming_events %}
 
 {% endblock %}
