@@ -79,7 +79,7 @@ ul li {
 #Container {
     width: 840px;
     padding: 20px;
-    margin: 30px auto 20px auto;
+    margin: 30px auto 10px auto;
     background-color: #FFF;
     border: 1px solid #333;
 }
@@ -129,6 +129,22 @@ ul li {
 
 #Footer li:last-child {
     border-right: none;
+}
+
+#Versions {
+    width: 840px;
+    padding: 0px 20px 0px 20px;
+    margin: 0px auto 10px auto;
+    overflow: hidden;
+    position: static;
+}
+
+#Versions li {
+    float: right;
+    display: inline;
+    list-style-type: none;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 20px;
 }
 
 /* @end */

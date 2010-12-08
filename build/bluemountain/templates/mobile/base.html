@@ -1,0 +1,14 @@
+{% extends "common/base.html" %}
+
+
+{% block meta %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+<meta name="HandheldFriendly" content="True" />
+{% endblock %}
+
+
+{% block css %}
+<style type="text/css">
+	@import "{{ MEDIA_URL }}css/mobile.css";
+</style>
+{% endblock %}

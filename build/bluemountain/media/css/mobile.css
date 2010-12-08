@@ -1,0 +1,17 @@
+/*
+ *	Title: Mobile CSS Styles for lovewinterturnblue.ca
+ *	Date: December 7, 2010
+ *  Author: Taylan Pince (taylanpince at gmail dot com)
+ */
+
+
+/* @group Mobile */
+
+#Container,
+#Navigation,
+#Footer,
+#Versions {
+    width: 320px;
+}
+
+/* @end */

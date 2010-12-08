@@ -28,13 +28,25 @@ SECRET_KEY = 'dablw8qa8)p4bb6zx=$$o=x#7u)0&g#@_jo1810e$^wa=h-8_9'
 CACHE_BACKEND = 'memcached://127.0.0.1:11211/'
 
 TEMPLATE_LOADERS = (
+    'django_mobile.loader.Loader',
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
+)
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.debug',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
+    'django.contrib.messages.context_processors.messages',
+    'django_mobile.context_processors.flavour',
 )
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django_mobile.middleware.MobileDetectionMiddleware',
+    'django_mobile.middleware.SetFlavourMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -57,6 +69,7 @@ INSTALLED_APPS = (
     'django.contrib.markup',
 
     'django_extensions',
+    'django_mobile',
     'sorl.thumbnail',
     'south',
 
