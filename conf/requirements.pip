@@ -6,4 +6,6 @@ docutils==0.7
 sphinx==1.0.5
 python-memcached==1.45
 Markdown==2.0.3
+lxml==2.3beta1
+BeautifulSoup==3.2.0
 git+git://github.com/taylanpince/django-mobile.git

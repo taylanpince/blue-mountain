@@ -75,6 +75,7 @@ INSTALLED_APPS = (
 
     'content_blocks',
     'contests',
+    'events',
 )
 
 try:
