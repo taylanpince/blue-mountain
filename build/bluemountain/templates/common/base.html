@@ -27,7 +27,7 @@
 
 <body id="top" class="{% block class %}{% endblock %}">
 
-{% block body %}
+	{% block body %}
 	<div id="Container">
 		<ul id="Navigation">
 			<li><a href="{% url home %}">Home</a></li>
@@ -48,7 +48,7 @@
 			<li><a href="{% url contact %}">Contact</a></li>
 		</ul>
 	</div>
-{% endblock %}
+	{% endblock %}
 	
 	<ul id="Versions">
 	    <li><a href="?flavour=full">Desktop Version</a>
@@ -68,6 +68,8 @@
 		pageTracker._trackPageview();
 	//]]>
 	</script>
+	
+	{% block extra_js %}{% endblock %}
 
 </body>
 </html>

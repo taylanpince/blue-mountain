@@ -1,14 +1,53 @@
 {% extends "contests/base.html" %}
 
+{% load content_block_tags %}
+
 
 {% block content %}
 
-<h1>Enter the Contest</h1>
-
-<form method="post" action="{% url contests_enter %}">
-	{% csrf_token %}
-	{{ form.as_p }}
-	<p><input type="submit" value="Enter" /></p>
-</form>
+<div class="spacer">
+	<div class="grid_12">
+		{% content_block "contest-entry" %}
+	</div>
+	<div class="grid_12">
+		<form method="post" action="{% url contests_enter %}">
+			{% csrf_token %}
+			<p>
+				{% if form.email.errors %}{{ form.email.errors }}{% endif %}
+				{{ form.email.label_tag }}
+				{{ form.email }}
+			</p>
+			<p>
+				{% if form.email_confirm.errors %}{{ form.email_confirm.errors }}{% endif %}
+				{{ form.email_confirm.label_tag }}
+				{{ form.email_confirm }}
+			</p>
+			<p>
+				{% if form.first_name.errors %}{{ form.first_name.errors }}{% endif %}
+				{{ form.first_name.label_tag }}
+				{{ form.last_name }}
+			</p>
+			<p>
+				{% if form.last_name.errors %}{{ form.last_name.errors }}{% endif %}
+				{{ form.last_name.label_tag }}
+				{{ form.last_name }}
+			</p>
+			<p>
+				{{ form.newsletter }}
+				{{ form.newsletter.label_tag }}
+			</p>
+			<p>
+				{% if form.agreement.errors %}{{ form.agreement.errors }}{% endif %}
+				{{ form.agreement }}
+				{{ form.agreement.label_tag }}
+			</p>
+			<p><input id="sendMail" type="submit" name="enter" value="ENTER" /></p>
+			<p>
+				<a name="fb_share"></a> 
+				<script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
+			</p>
+		</form>
+	</div>
+</div>
 
 {% endblock %}

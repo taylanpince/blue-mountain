@@ -3,24 +3,57 @@
 {% load thumbnail %}
 {% load content_block_tags %}
 
+{% block css %}
+{{ block.super }}
+
+<style type="text/css">
+	@import "{{ MEDIA_URL }}js/shadowbox/shadowbox.css";
+</style>
+{% endblock %}
+
+{% block js %}
+{{ block.super }}
+<script type="text/javascript" src="{{ MEDIA_URL }}js/paginate.js"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}js/shadowbox/shadowbox.js"></script>
+{% endblock %}
 
 {% block content %}
 
-<h1>Photos</h1>
+<div class="spacer">
+	<div class="grid_12">
+		<h1>Photos</h1>
+		{% content_block "photos" %}
+	</div>
+	<div class="grid_12">
+		<!-- the input fields that will hold the variables we will use -->
+		<input type="hidden" id="current_page" />
+		<input type="hidden" id="show_per_page" />
 
-{% content_block "photos" %}
+		<!-- Content div. The child elements will be used for paginating(they don't have to be all the same,
+			you can use divs, paragraphs, spans, or whatever you like mixed together). '-->
+		<div id="photos">
+			{% for photo in photos %}
+			{% thumbnail photo.image "120x90" as image %}
+			<a href="{{ photo.image.url }}" rel="shadowbox[photos]"><img src="{{ image.url }}" alt="{{ photo.caption }}" /></a>
+			{% endthumbnail %}
+			{% endfor %}
+		</div>
 
-<ul>
-	{% for photo in photos %}
-	<li>
-		{% thumbnail photo.image "100x100" as image %}
-		<a href="{{ photo.image.url }}"><img src="{{ image.url }}" alt="{{ photo.caption }}" /></a>
-		{% empty %}
-		<p>No Photo</p>
-		{% endthumbnail %}
-		<p>{{ photo.caption }}</p>
-	</li>
-	{% endfor %}
-</ul>
+		<!-- An empty div which will be populated using jQuery -->
+		<div id="page_navigation"></div>
+	</div>
+	<div class="grid_12"><a href="{% url contests_enter %}"><div class="enter spacer">Enter</div></a></div>
+</div>
 
+{% endblock %}
+
+
+{% block extra_js %}
+<script type="text/javascript">
+//<![CDATA[
+	Shadowbox.init({
+		overlayColor: "#eee"
+	});
+//]]>
+</script>
 {% endblock %}

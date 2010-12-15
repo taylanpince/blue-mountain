@@ -4,5 +4,12 @@
 
 
 {% block content %}
-{% content_block "contest-rules" %}
+
+<div class="spacer">
+	<div class="grid_12">
+		{% content_block "contest-rules" %}
+	</div>
+	<div class="grid_12"><a href="{% url contests_enter %}"><div class="enter spacer">Enter</div></a></div>
+</div>
+
 {% endblock %}

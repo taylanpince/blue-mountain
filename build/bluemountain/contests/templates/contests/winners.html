@@ -6,26 +6,32 @@
 
 {% block content %}
 
-<h1>Winners</h1>
+<div class="spacer">
+	<div class="grid_12">
+		<h1>Winners</h1>
 
-{% content_block "contest-winners" %}
+		{% content_block "contest-winners" %}
 
-{% regroup winners by contest as contests %}
+		{% regroup winners by contest as contests %}
 
-{% for contest in contests %}
-<h2>{{ contest.grouper }}</h2>
-<ul>
-	{% for winner in contest.list %}
-	<li>
-		{% thumbnail winner.photo "100x100" as photo %}
-		<img src="{{ photo.url }}" alt="{{ winner.name }}" />
-		{% empty %}
-		<p>No Photo</p>
-		{% endthumbnail %}
-		<p>{{ winner.name }}</p>
-	</li>
-	{% endfor %}
-</ul>
-{% endfor %}
+		{% for contest in contests %}
+		<div class="week spacer">
+			<h2>{{ contest.grouper }}</h2>
+			{% for winner in contest.list %}
+			<div class="winner">
+				{% thumbnail winner.photo "125x90" as photo %}
+				<img src="{{ photo.url }}" alt="{{ winner.name }}" />
+				{% empty %}
+				<p>No Photo</p>
+				{% endthumbnail %}
+				<p>{{ winner.name }}</p>
+			</div>
+			{% endfor %}
+		</div>
+		{% endfor %}
+	</div>
+</div>
+
+
 
 {% endblock %}

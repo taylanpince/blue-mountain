@@ -4,17 +4,24 @@
 
 
 {% block content %}
-<h1>Thanks for Entering the Contest</h1>
 
-{{ formset.non_form_errors }}
+<div class="spacer">
+	<div class="grid_12">
+		{% content_block "contest-share" %}
+	</div>
+	<div class="grid_12">
+		{{ formset.non_form_errors }}
 
-<form method="post" action="{% url contests_share %}">
-	{% csrf_token %}
-	{{ formset.management_form }}
-	{% for form in formset.forms %}
-	{{ form.as_p }}
-	{% endfor %}
-	<p><input type="submit" value="Send" /></p>
-</form>
+		<form method="post" action="{% url contests_share %}">
+			{% csrf_token %}
+			{{ formset.management_form }}
+			{% for form in formset.forms %}
+			{{ form.as_p }}
+			{% endfor %}
+			<p><input type="submit" value="Send" /></p>
+		</form>
+	</div>
+</div>
+
 
 {% endblock %}

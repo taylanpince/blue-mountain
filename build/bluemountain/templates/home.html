@@ -10,8 +10,7 @@
 {% endblock %}
 
 
-{% block body %}
-
+{% block header %}
 <!-- Parallax swfObject start -->
 <div id="parallax">
 	<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="1200" height="669" id="FlashID" title="Blue Mountain Parallax">
@@ -43,116 +42,112 @@
 		<!--<![endif]-->
 	</object>
 </div><!-- Parallax End -->
+{% endblock %}
 
-<div id="content" class="container_12">
 
-	<!--White Background Around Content-->
-	<div id="white"></div>
-
-	<div id="formSpace">
-		<!-- Start Enter Contact Form HTML-->
-		<div id="contactFormContainer">
-			<div id="contactLink">
-				<img src="{{ MEDIA_URL }}images/enterdown.png" alt="How Can You Not Enter? So Enter"/>
-			</div>
-			<div id="contactForm">
-				<br />
-				<fieldset>
-					<label for="Name">Name *</label>
-					<input id="name" type="text" />
-					<label for="Email">Email address *</label>
-					<input id="Email" type="text" /><br>
-					<label for="Phone">Phone Number</label>
-					<input id="phone" type="text" />
-					<input id="sendMail" type="submit" name="enter" value="ENTER" onclick="closeForm()" />
-				</fieldset>
-			</div>
+{% block content %}
+<div id="formSpace">
+	<!-- Start Enter Contact Form HTML-->
+	<div id="contactFormContainer">
+		<div id="contactLink">
+			<img src="{{ MEDIA_URL }}images/enterdown.png" alt="How Can You Not Enter? So Enter"/>
 		</div>
-		<div id="snowForm">
-			<img src="{{ MEDIA_URL }}images/snow.png" alt="puffy snow">
+		<div id="contactForm">
+			<br />
+			<fieldset>
+				<label for="Name">Name *</label>
+				<input id="name" type="text" />
+				<label for="Email">Email address *</label>
+				<input id="Email" type="text" /><br>
+				<label for="Phone">Phone Number</label>
+				<input id="phone" type="text" />
+				<input id="sendMail" type="submit" name="enter" value="ENTER" onclick="closeForm()" />
+			</fieldset>
 		</div>
 	</div>
-
-	<!--Weather Widget-->
-	<div id="snowRunsOpen" class="modules">
-		<h1>Ski Reports</h1>
-		<script type="text/javascript">
-		//<![CDATA[
-			putSWF(
-				"http://us1.resorts-interactive.com/vicosite/widget.swf", 
-				280, 320, 8, "image", 
-				"http://us1.resorts-interactive.com/images/getFlashPlayer.png", 
-				"&clientID=481&id=6741&prefix=http://us1.resorts-interactive.com/", 
-				"widget_6741", 
-				"transparent", 
-				"#FFFFFF"
-			);
-		//]]>
-		</script>
+	<div id="snowForm">
+		<img src="{{ MEDIA_URL }}images/snow.png" alt="puffy snow">
 	</div>
+</div>
 
-	<div class="polls"></div>
+<!--Weather Widget-->
+<div id="snowRunsOpen" class="modules">
+	<h1>Ski Reports</h1>
+	<script type="text/javascript">
+	//<![CDATA[
+		putSWF(
+			"http://us1.resorts-interactive.com/vicosite/widget.swf", 
+			280, 320, 8, "image", 
+			"http://us1.resorts-interactive.com/images/getFlashPlayer.png", 
+			"&clientID=481&id=6741&prefix=http://us1.resorts-interactive.com/", 
+			"widget_6741", 
+			"transparent", 
+			"#FFFFFF"
+		);
+	//]]>
+	</script>
+</div>
 
-	<!--Special Offers & Deals-->
-	<div id="specialOffers" class="modules">
-		<h1>Deals</h1>
-		<br />
-		<p>Book a ski &amp; Snowboard getaway and receive up to 40% off your lodging and lift tickets.</p>
-		<br />
-		<img src="{{ MEDIA_URL }}images/dealImage.jpg" />
-		<br /><br />
-		<p>More information on this offer can be found by </p>
-		<br />
-		<a>CLICKING HERE.</a>
-	</div>
+<div class="polls"></div>
 
-	<div class="polls"></div>
+<!--Special Offers & Deals-->
+<div id="specialOffers" class="modules">
+	<h1>Deals</h1>
+	<br />
+	<p>Book a ski &amp; Snowboard getaway and receive up to 40% off your lodging and lift tickets.</p>
+	<br />
+	<img src="{{ MEDIA_URL }}images/dealImage.jpg" />
+	<br /><br />
+	<p>More information on this offer can be found by </p>
+	<br />
+	<a>CLICKING HERE.</a>
+</div>
 
-	<!-- Social Media Field-->
-	<div id="twitter" class="modules">
-		<h1>Tweets</h1>
-		<script type="text/javascript">
-		//<![CDATA[
-			new TWTR.Widget({
-				version: 2,
-				type: 'profile',
-				rpp: 3,
-				interval: 6000,
-				width: 260,
-				height: 200,
-				theme: {
-					shell: {
-						background: 'transparent',
-						color: '#5c5c5c'
-					},
-					tweets: {
-						background: 'transparent',
-						color: '#8a8a8a',
-						links: '#eb9007'
-					}
+<div class="polls"></div>
+
+<!-- Social Media Field-->
+<div id="twitter" class="modules">
+	<h1>Tweets</h1>
+	<script type="text/javascript">
+	//<![CDATA[
+		new TWTR.Widget({
+			version: 2,
+			type: 'profile',
+			rpp: 3,
+			interval: 6000,
+			width: 260,
+			height: 200,
+			theme: {
+				shell: {
+					background: 'transparent',
+					color: '#5c5c5c'
 				},
-				features: {
-					scrollbar: true,
-					loop: false,
-					live: true,
-					hashtags: true,
-					timestamp: true,
-					avatars: false,
-					behavior: 'all'
+				tweets: {
+					background: 'transparent',
+					color: '#8a8a8a',
+					links: '#eb9007'
 				}
-			}).render().setUser('BlueMtnResort').start();
-		//]]>
-		</script>
-	</div>
+			},
+			features: {
+				scrollbar: true,
+				loop: false,
+				live: true,
+				hashtags: true,
+				timestamp: true,
+				avatars: false,
+				behavior: 'all'
+			}
+		}).render().setUser('BlueMtnResort').start();
+	//]]>
+	</script>
 </div>
 
-<div id="footer">
-	<div id="footerContent">
-		<p>elementum ipsum non justo facilisis molestie. Pellentesque vehicula dui eget nisi sagittis quis dictum sapien elementum. Cras risus nisl, porttitor at tempus vitae, rhoncus eget ligula. In</p>
-		<p>elementum ipsum non justo facilisis molestie. Pellentesque vehicula dui eget nisi sagittis quis dictum sapien elementum. Cras risus nisl, porttitor at tempus vitae, rhoncus eget ligula. In</p>
-	</div>
-</div>
+{% endblock %}
 
+
+{% block extra_js %}
+
+{{ block.super }}
 
 <!-- Sliding Enter Form jQuery Start-->
 <script type="text/javascript">

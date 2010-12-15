@@ -179,7 +179,7 @@ margin:0 auto;
 font-size:14px;
 line-height:25px;
 padding-top:300px;
-width:460px;
+/*width:460px;*/
 margin-right:10px;
 margin-left:10px;
 
@@ -215,3 +215,23 @@ margin-top:35px;
 	margin: 0;
 	padding: 0;
 }            
+
+
+
+/* STYLE ADDITIONS */
+
+#content h1 {
+    margin-bottom: 15px;
+}
+
+#content p {
+    margin-bottom: 10px;
+}
+
+#content a,
+#content a:link,
+#content a:visited,
+#content a:active {
+    color: #11c3f6;
+    text-decoration: none;
+}
