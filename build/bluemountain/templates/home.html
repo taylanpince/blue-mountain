@@ -10,57 +10,170 @@
 {% endblock %}
 
 
-{% block content %}
-{% content_block "home" %}
-{% contest_countdown %}
+{% block body %}
 
+<!-- Parallax swfObject start -->
+<div id="parallax">
+	<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="1200" height="669" id="FlashID" title="Blue Mountain Parallax">
+		<param name="movie" value="{{ MEDIA_URL }}flash/Parallax.swf" />
+		<param name="quality" value="high" />
+		<param name="wmode" value="transparent" />
+		<param name="swfversion" value="9.0.45.0" />
+		<!-- This param tag prompts users with Flash Player 6.0 r65 and higher to download the latest version of Flash Player. Delete it if you don’t want users to see the prompt. -->
+		<param name="expressinstall" value="{{ MEDIA_URL }}flash/expressInstall.swf" />
+		<!-- Next object tag is for non-IE browsers. So hide it from IE using IECC. -->
+		<!--[if !IE]>-->
+		<object type="application/x-shockwave-flash" data="{{ MEDIA_URL }}flash/Parallax.swf" width="1200" height="669">
+		<!--<![endif]-->
+		<param name="quality" value="high" />
+		<param name="wmode" value="transparent" />
+		<param name="swfversion" value="9.0.45.0" />
+		<param name="expressinstall" value="{{ MEDIA_URL }}flash/expressInstall.swf" />
+			<!-- The browser displays the following alternative content for users with Flash Player 6.0 and older. -->
+			<div>
+				<h4>Content on this page requires a newer version of Adobe Flash Player.</h4>
+				<p>
+					<a href="http://www.adobe.com/go/getflashplayer">
+						<img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" width="112" height="33" />
+					</a>
+				</p>
+			</div>
+		<!--[if !IE]>-->
+		</object>
+		<!--<![endif]-->
+	</object>
+</div><!-- Parallax End -->
+
+<div id="content" class="container_12">
+
+	<!--White Background Around Content-->
+	<div id="white"></div>
+
+	<div id="formSpace">
+		<!-- Start Enter Contact Form HTML-->
+		<div id="contactFormContainer">
+			<div id="contactLink">
+				<img src="{{ MEDIA_URL }}images/enterdown.png" alt="How Can You Not Enter? So Enter"/>
+			</div>
+			<div id="contactForm">
+				<br />
+				<fieldset>
+					<label for="Name">Name *</label>
+					<input id="name" type="text" />
+					<label for="Email">Email address *</label>
+					<input id="Email" type="text" /><br>
+					<label for="Phone">Phone Number</label>
+					<input id="phone" type="text" />
+					<input id="sendMail" type="submit" name="enter" value="ENTER" onclick="closeForm()" />
+				</fieldset>
+			</div>
+		</div>
+		<div id="snowForm">
+			<img src="{{ MEDIA_URL }}images/snow.png" alt="puffy snow">
+		</div>
+	</div>
+
+	<!--Weather Widget-->
+	<div id="snowRunsOpen" class="modules">
+		<h1>Ski Reports</h1>
+		<script type="text/javascript">
+		//<![CDATA[
+			putSWF(
+				"http://us1.resorts-interactive.com/vicosite/widget.swf", 
+				280, 320, 8, "image", 
+				"http://us1.resorts-interactive.com/images/getFlashPlayer.png", 
+				"&clientID=481&id=6741&prefix=http://us1.resorts-interactive.com/", 
+				"widget_6741", 
+				"transparent", 
+				"#FFFFFF"
+			);
+		//]]>
+		</script>
+	</div>
+
+	<div class="polls"></div>
+
+	<!--Special Offers & Deals-->
+	<div id="specialOffers" class="modules">
+		<h1>Deals</h1>
+		<br />
+		<p>Book a ski &amp; Snowboard getaway and receive up to 40% off your lodging and lift tickets.</p>
+		<br />
+		<img src="{{ MEDIA_URL }}images/dealImage.jpg" />
+		<br /><br />
+		<p>More information on this offer can be found by </p>
+		<br />
+		<a>CLICKING HERE.</a>
+	</div>
+
+	<div class="polls"></div>
+
+	<!-- Social Media Field-->
+	<div id="twitter" class="modules">
+		<h1>Tweets</h1>
+		<script type="text/javascript">
+		//<![CDATA[
+			new TWTR.Widget({
+				version: 2,
+				type: 'profile',
+				rpp: 3,
+				interval: 6000,
+				width: 260,
+				height: 200,
+				theme: {
+					shell: {
+						background: 'transparent',
+						color: '#5c5c5c'
+					},
+					tweets: {
+						background: 'transparent',
+						color: '#8a8a8a',
+						links: '#eb9007'
+					}
+				},
+				features: {
+					scrollbar: true,
+					loop: false,
+					live: true,
+					hashtags: true,
+					timestamp: true,
+					avatars: false,
+					behavior: 'all'
+				}
+			}).render().setUser('BlueMtnResort').start();
+		//]]>
+		</script>
+	</div>
+</div>
+
+<div id="footer">
+	<div id="footerContent">
+		<p>elementum ipsum non justo facilisis molestie. Pellentesque vehicula dui eget nisi sagittis quis dictum sapien elementum. Cras risus nisl, porttitor at tempus vitae, rhoncus eget ligula. In</p>
+		<p>elementum ipsum non justo facilisis molestie. Pellentesque vehicula dui eget nisi sagittis quis dictum sapien elementum. Cras risus nisl, porttitor at tempus vitae, rhoncus eget ligula. In</p>
+	</div>
+</div>
+
+
+<!-- Sliding Enter Form jQuery Start-->
 <script type="text/javascript">
 //<![CDATA[
-	putSWF(
-		"http://us1.resorts-interactive.com/vicosite/widget.swf", 
-		280, 320, 8, "image", 
-		"http://us1.resorts-interactive.com/images/getFlashPlayer.png", 
-		"&clientID=481&id=6741&prefix=http://us1.resorts-interactive.com/", 
-		"widget_6741", 
-		"transparent", 
-		"#FFFFFF"
-	);
-//]]>
-</script>
-
-<script type="text/javascript">
-//<![CDATA[
-	new TWTR.Widget({
-		version: 2,
-		type: 'profile',
-		rpp: 3,
-		interval: 6000,
-		width: 260,
-		height: 200,
-		theme: {
-			shell: {
-				background: 'transparent',
-				color: '#5c5c5c'
-			},
-			tweets: {
-				background: 'transparent',
-				color: '#8a8a8a',
-				links: '#eb9007'
+	$(document).ready(function() {
+		$("#contactLink").click(function(){
+			if ($("#contactForm").is(":hidden")) {
+				$("#contactForm").slideDown("fast");
+			} else {
+				$("#contactForm").slideUp("slow");
 			}
-		},
-		features: {
-			scrollbar: true,
-			loop: false,
-			live: true,
-			hashtags: true,
-			timestamp: true,
-			avatars: false,
-			behavior: 'all'
-		}
-	}).render().setUser('BlueMtnResort').start();
+		});
+	});
+
+	function closeForm() {
+		$("#messageSent").show("slow");
+
+		setTimeout('$("#messageSent").hide();$("#contactForm").slideUp("slow")', 2000);
+	}
 //]]>
 </script>
-
-{% upcoming_events %}
+<!-- Sliding Enter Form End-->
 
 {% endblock %}

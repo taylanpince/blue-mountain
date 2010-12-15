@@ -147,4 +147,9 @@ ul li {
     margin: 0px 0px 0px 20px;
 }
 
+#Versions li a {
+    font: 12px Helvetica, Arial, sans-serif;
+    color: #333;
+}
+
 /* @end */

@@ -8,7 +8,7 @@
 	
 	{% block meta %}{% endblock %}
 	
-	<title>Blue Mountain &mdash; {% block title %}Home{% endblock %}</title>
+	<title>Love Winter Turn Blue &mdash; {% block title %}Home{% endblock %}</title>
 	
 	<link rel="shortcut icon" href="{{ MEDIA_URL }}images/favicon.ico" />
 	
@@ -27,6 +27,7 @@
 
 <body id="top" class="{% block class %}{% endblock %}">
 
+{% block body %}
 	<div id="Container">
 		<ul id="Navigation">
 			<li><a href="{% url home %}">Home</a></li>
@@ -47,6 +48,7 @@
 			<li><a href="{% url contact %}">Contact</a></li>
 		</ul>
 	</div>
+{% endblock %}
 	
 	<ul id="Versions">
 	    <li><a href="?flavour=full">Desktop Version</a>
