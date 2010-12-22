@@ -19,3 +19,28 @@
 }
 
 /* @end */
+
+
+/* @group iPhone 4 */
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+
+    /*#Container {
+        background-image: url("../images/header@2x.png");
+        background-size: 320px 32px;
+    }*/
+
+}
+
+/* @end */
+
+
+/* @group iPad and wide windows */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px), screen and (min-width: 768px) {
+    
+    
+    
+}
+
+/* @end */

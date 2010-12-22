@@ -4,9 +4,11 @@ font-family:helvetica, sans-serif;
 }
 body {
 position:relative;
-background-image:url('../images/Mountains.jpg');
-background-repeat:repeat-x;
-background-color:#eae9ee;
+background-image:url('../images/mountains.jpg');
+background-repeat:no-repeat;
+background-color:#fff;
+  background-position:50% 0%;
+
 }
 #content{
 background:#fff;
@@ -19,7 +21,9 @@ color:#11c3f6;
 div{
 display:block;
 }
-
+.down{
+top:280px;
+}
 h1{
 text-transform:uppercase;
 text-align:center;
@@ -55,8 +59,8 @@ background:#11c3f6;
 #white{
 background:#fff;
 position:absolute;
-height:70%;
-top:300px;
+height:50%;
+top:350px;
 overflow:none;
 width:960px;
 margin:0 auto;
@@ -88,7 +92,7 @@ margin-top:170px;
 .modules{
 width:300px;
 float:left;
-height:350px;
+height:400px;
 }
 .polls{
 width:20px;
@@ -103,6 +107,17 @@ margin-left:20px;
 text-align:center;
 font-size:18px;
 }
+#bottomColor{
+width:960px;
+height:600px;
+z-index:-99;
+position:absolute;
+background: url('../images/bottomImage.jpg') repeat-x;
+bottom:0;
+left:0;
+right:0;
+margin:0 auto;
+}
 #enter{
 position:absolute;
 top:580px;
@@ -110,7 +125,7 @@ left:25%;
 border:none;
 }
 #content {
-margin-top:0px;
+margin-top:50px;
 }
 #contactFormContainer
             {
@@ -166,9 +181,10 @@ margin-top:0px;
 #footer{
 position:relative;
 clear:both;
-background-image: url("../images/footer.png");
-height:420px;
+background-image: url("../images/footer.jpg");
+height:432px;
   background-position:50% 0%;
+  z-index:-999;
   background-repeat:no-repeat;
 }
 #footerContent{
@@ -179,11 +195,8 @@ margin:0 auto;
 font-size:14px;
 line-height:25px;
 padding-top:300px;
-/*width:460px;*/
 margin-right:10px;
 margin-left:10px;
-
-float:left;
 }
 #photos{
 width:880px;
@@ -214,7 +227,59 @@ margin-top:35px;
 	height: 0px;
 	margin: 0;
 	padding: 0;
-}            
+}  
+#clickdown {
+position:absolute;
+top:0px;
+height:90px;
+left:0;
+right:0;
+margin:0 auto;
+width:600px;
+}
+#slidingIce {
+position:absolute;
+top:300px;
+left:0;
+right:0;
+margin:0 auto;
+width:600px;
+} 25px 45px 25px;
+float:left;
+}
+#page_navigation{
+clear:both;
+}
+.page_link, .previous_link, .next_link{
+padding:3px;
+text-decoration:none;
+border:1px solid #999;
+}
+#activityFeed {
+	float: left;
+	width: 270px;
+}
+.spacer{
+margin-top:35px;
+}
+.clear {
+	clear: both;
+	display: block;
+	height: 0px;
+	margin: 0;
+	padding: 0;
+}  
+#clickdown {
+position:absolute;
+top:0px;
+height:90px;
+left:0;
+right:0;
+margin:0 auto;
+width:600px;
+}
+#slidingIce {
+position:absolute;
 
 
 
