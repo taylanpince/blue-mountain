@@ -29,6 +29,7 @@
 
 	{% block body %}
 	<div id="Container">
+		{% block navigation %}
 		<ul id="Navigation">
 			<li><a href="{% url home %}">Home</a></li>
 			<li><a href="{% url contests_enter %}">Enter</a></li>
@@ -36,17 +37,20 @@
 			<li><a href="{% url contests_winners %}">Winners</a></li>
 			<li><a href="{% url contests_photos %}">Photos</a></li>
 		</ul>
+		{% endblock %}
 
 		<div id="Content">
 			{% block content %}{% endblock %}
 		</div>
 		
+		{% block footer %}
 		<ul id="Footer">
 			<li><a href="{% url privacy %}">Privacy Policy</a></li>
 			<li><a href="http://bluemountain.ca">BlueMountain.ca</a></li>
 			<li><a href="{% url terms %}">Terms &amp; Conditions</a></li>
 			<li><a href="{% url contact %}">Contact</a></li>
 		</ul>
+		{% endblock %}
 	</div>
 	{% endblock %}
 	

@@ -3,6 +3,26 @@
 {% load contest_tags %}
 
 
+{% block class %}home{% endblock %}
+
 {% block content %}
-{% contest_countdown %}
+
+<h1>You. Five friends. One Helicopter. Blue Mountain.</h1>
+<h2>How can you not enter?</h2>
+
+<a href="{% url contests_enter %}">
+	<img src="{{ MEDIA_URL }}images/mobile/btn-enter.png" alt="So Enter!" />
+</a>
+
+{% endblock %}
+
+
+{% block footer %}
+<hr />
+
+<ul class="rounded-buttons">
+	<li class="left"><a href="#" class="conditions">Live Conditions</a></li>
+	<li><a href="#" class="about">About Blue</a></li>
+	<li class="right"><a href="#" class="deals">Deals</a></li>
+</ul>
 {% endblock %}

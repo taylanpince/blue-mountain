@@ -7,15 +7,140 @@
 
 /* @group Mobile */
 
+body {
+    background-color: #2e4c63, transparent;
+    background-repeat: no-repeat, repeat;
+    background-position: 50% 50%, top left;
+    background-image: -webkit-gradient(linear, 50% 100%, 50% 50%, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0))), url("../images/mobile/bg-pattern.png");
+    /*background-image: -webkit-gradient(radial, 50% 30%, 1, 50% 30%, 150, from(rgba(255, 255, 255, 0.1)), to(rgba(255, 255, 255, 0))), url("../images/mobile/bg-pattern.png");*/
+}
+
+body.home {
+    background-repeat: no-repeat, no-repeat, repeat;
+    background-position: 50% 0%, 50% 50%, top left;
+    background-image: url("../images/mobile/header-home.png"), -webkit-gradient(linear, 50% 100%, 50% 50%, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0))), url("../images/mobile/bg-pattern.png");
+}
+
+hr {
+    border: none;
+    height: 27px;
+    margin-bottom: 20px;
+    background: transparent url("../images/mobile/bg-separator.png") 50% 50% no-repeat;
+}
+
 #Container,
 #Navigation,
 #Footer,
 #Versions {
-    width: 280px;
+    width: 300px;
+    padding: 0px 10px 0px 10px;
+}
+
+#Versions li a {
+    font-size: 11px;
+    text-decoration: none;
+    color: #ccc;
 }
 
 #Container {
+    border: none;
     margin-top: 0px;
+    background-color: transparent;
+}
+
+body.home #Container {
+    padding-top: 220px;
+}
+
+body.home #Content {
+    text-align: center;
+}
+
+h1,
+h2 {
+    color: #fff;
+}
+
+h1 {
+    line-height: 26px;
+}
+
+body.home h1 {
+    height: 36px;
+    color: transparent;
+    background: transparent url("../images/mobile/header-intro-1.png") 50% 50% no-repeat;
+}
+
+body.home h2 {
+    height: 16px;
+    color: transparent;
+    margin-bottom: 16px;
+    background: transparent url("../images/mobile/header-intro-2.png") 50% 50% no-repeat;
+}
+
+ul.rounded-buttons {
+    width: 300px;
+    overflow: hidden;
+    position: static;
+    margin-bottom: 20px;
+}
+
+ul.rounded-buttons li {
+    float: left;
+    display: inline;
+    width: 98px;
+    height: 48px;
+    margin: 0px;
+    padding: 0px;
+    border-top: 1px solid #1C6D91;
+    border-bottom: 1px solid #1C6D91;
+    background-color: transparent, #31BFFF;
+    background-repeat: no-repeat;
+    background-position: 95% 10%, top left;
+    background-image: url("../images/mobile/bg-bolts.png"), -webkit-gradient(linear, 0% 0%, 0% 100%, from(#31BFFF), to(#2D4F65));
+}
+
+ul.rounded-buttons li.left {
+    border-right: 1px solid #2D4F65;
+    border-left: 1px solid #1C6D91;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+ul.rounded-buttons li.right {
+    border-left: 1px solid #2D4F65;
+    border-right: 1px solid #1C6D91;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+ul.rounded-buttons li.active {
+    background-image: url("../images/mobile/bg-bolts.png"), -webkit-gradient(linear, 0% 0%, 0% 100%, from(#2D4F65), to(#31BFFF));
+}
+
+ul.rounded-buttons li a {
+    display: block;
+    height: 40px;
+    padding: 4px;
+    color: transparent;
+    text-decoration: none;
+    font: 15px Georgia, Times, serif;
+    text-align: center;
+    background-color: transparent;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+ul.rounded-buttons li a.about {
+    background-image: url("../images/mobile/btn-about.png");
+}
+
+ul.rounded-buttons li a.deals {
+    background-image: url("../images/mobile/btn-deals.png");
+}
+
+ul.rounded-buttons li a.conditions {
+    background-image: url("../images/mobile/btn-conditions.png");
 }
 
 /* @end */
