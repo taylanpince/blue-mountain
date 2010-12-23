@@ -78,6 +78,13 @@ body.home h2 {
     background: transparent url("../images/mobile/header-intro-2.png") 50% 50% no-repeat;
 }
 
+body.home a.enter {
+    height: 40px;
+    display: block;
+    color: transparent;
+    background: transparent url("../images/mobile/btn-enter.png") 50% 50% no-repeat;
+}
+
 ul.rounded-buttons {
     width: 300px;
     overflow: hidden;
@@ -150,10 +157,60 @@ ul.rounded-buttons li a.conditions {
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2) {
 
-    /*#Container {
-        background-image: url("../images/header@2x.png");
-        background-size: 320px 32px;
-    }*/
+    body {
+        background-size: 100% 100%, 128px 128px;
+        background-image: -webkit-gradient(linear, 50% 100%, 50% 50%, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0))), url("../images/mobile/bg-pattern@2x.png");
+    }
+    
+    body.home {
+        background-size: 294px 291px, 100% 100%, 128px 128px;
+        background-image: url("../images/mobile/header-home@2x.png"), -webkit-gradient(linear, 50% 100%, 50% 50%, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0))), url("../images/mobile/bg-pattern@2x.png");
+    }
+    
+    body.home a.enter {
+        background-size: 184px 40px;
+        background-image: url("../images/mobile/btn-enter@2x.png");
+    }
+    
+    hr {
+        background-size: 303px 27px;
+        background-image: url("../images/mobile/bg-separator@2x.png");
+    }
+    
+    body.home h1 {
+        background-size: 288px 36px;
+        background-image: url("../images/mobile/header-intro-1@2x.png");
+    }
+    
+    body.home h2 {
+        background-size: 181px 16px;
+        background-image: url("../images/mobile/header-intro-2@2x.png");
+    }
+    
+    ul.rounded-buttons li {
+        background-size: 9px 9px, 100% 100%;
+        background-image: url("../images/mobile/bg-bolts@2x.png"), -webkit-gradient(linear, 0% 0%, 0% 100%, from(#31BFFF), to(#2D4F65));
+    }
+    
+    ul.rounded-buttons li.active {
+        background-size: 9px 9px, 100% 100%;
+        background-image: url("../images/mobile/bg-bolts@2x.png"), -webkit-gradient(linear, 0% 0%, 0% 100%, from(#2D4F65), to(#31BFFF));
+    }
+    
+    ul.rounded-buttons li a.about {
+        background-size: 71px 11px;
+        background-image: url("../images/mobile/btn-about@2x.png");
+    }
+
+    ul.rounded-buttons li a.deals {
+        background-size: 61px 25px;
+        background-image: url("../images/mobile/btn-deals@2x.png");
+    }
+
+    ul.rounded-buttons li a.conditions {
+        background-size: 69px 25px;
+        background-image: url("../images/mobile/btn-conditions@2x.png");
+    }
 
 }
 
