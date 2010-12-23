@@ -12,7 +12,6 @@ body {
     background-repeat: no-repeat, repeat;
     background-position: 50% 50%, top left;
     background-image: -webkit-gradient(linear, 50% 100%, 50% 50%, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0))), url("../images/mobile/bg-pattern.png");
-    /*background-image: -webkit-gradient(radial, 50% 30%, 1, 50% 30%, 150, from(rgba(255, 255, 255, 0.1)), to(rgba(255, 255, 255, 0))), url("../images/mobile/bg-pattern.png");*/
 }
 
 body.home {
@@ -36,6 +35,12 @@ hr {
     padding: 0px 10px 0px 10px;
 }
 
+#Header {
+    width: 300px;
+    height: 42px;
+    margin: 5px 0px 15px 0px;
+}
+
 #Versions li a {
     font-size: 11px;
     text-decoration: none;
@@ -45,10 +50,12 @@ hr {
 #Container {
     border: none;
     margin-top: 0px;
+    min-height: 460px;
     background-color: transparent;
 }
 
 body.home #Container {
+    min-height: 240px;
     padding-top: 220px;
 }
 
@@ -85,11 +92,33 @@ body.home a.enter {
     background: transparent url("../images/mobile/btn-enter.png") 50% 50% no-repeat;
 }
 
+a.home {
+    width: 42px;
+    height: 43px;
+    float: left;
+    color: transparent;
+    background: transparent url("../images/mobile/btn-home.png") top left no-repeat;
+}
+
+h1.about {
+    height: 13px;
+    color: transparent;
+    background: transparent url("../images/mobile/header-about.png") 50% 50% no-repeat;
+}
+
 ul.rounded-buttons {
     width: 300px;
     overflow: hidden;
     position: static;
     margin-bottom: 20px;
+}
+
+#Header ul.rounded-buttons {
+    width: 252px;
+    height: 42px;
+    float: left;
+    display: inline;
+    margin-left: 6px;
 }
 
 ul.rounded-buttons li {
@@ -105,6 +134,11 @@ ul.rounded-buttons li {
     background-repeat: no-repeat;
     background-position: 95% 10%, top left;
     background-image: url("../images/mobile/bg-bolts.png"), -webkit-gradient(linear, 0% 0%, 0% 100%, from(#31BFFF), to(#2D4F65));
+}
+
+#Header ul.rounded-buttons li {
+    width: 82px !important;
+    height: 42px !important;
 }
 
 ul.rounded-buttons li.left {
@@ -138,6 +172,10 @@ ul.rounded-buttons li a {
     background-repeat: no-repeat;
 }
 
+#Header ul.rounded-buttons li a {
+    height: 38px;
+}
+
 ul.rounded-buttons li a.about {
     background-image: url("../images/mobile/btn-about.png");
 }
@@ -148,6 +186,18 @@ ul.rounded-buttons li a.deals {
 
 ul.rounded-buttons li a.conditions {
     background-image: url("../images/mobile/btn-conditions.png");
+}
+
+ul.rounded-buttons li a.about-map {
+    background-image: url("../images/mobile/btn-map.png");
+}
+
+ul.rounded-buttons li a.about-tickets {
+    background-image: url("../images/mobile/btn-ticket.png");
+}
+
+ul.rounded-buttons li a.about-restaurants {
+    background-image: url("../images/mobile/btn-restaurants.png");
 }
 
 /* @end */
@@ -172,6 +222,11 @@ ul.rounded-buttons li a.conditions {
         background-image: url("../images/mobile/btn-enter@2x.png");
     }
     
+    a.home {
+        background-size: 42px 43px;
+        background-image: url("../images/mobile/btn-home@2x.png");
+    }
+    
     hr {
         background-size: 303px 27px;
         background-image: url("../images/mobile/bg-separator@2x.png");
@@ -185,6 +240,11 @@ ul.rounded-buttons li a.conditions {
     body.home h2 {
         background-size: 181px 16px;
         background-image: url("../images/mobile/header-intro-2@2x.png");
+    }
+    
+    h1.about {
+        background-size: 303px 13px;
+        background-image: url("../images/mobile/header-about@2x.png");
     }
     
     ul.rounded-buttons li {
@@ -210,6 +270,21 @@ ul.rounded-buttons li a.conditions {
     ul.rounded-buttons li a.conditions {
         background-size: 69px 25px;
         background-image: url("../images/mobile/btn-conditions@2x.png");
+    }
+    
+    ul.rounded-buttons li a.about-map {
+        background-size: 61px 12px;
+        background-image: url("../images/mobile/btn-map@2x.png");
+    }
+
+    ul.rounded-buttons li a.about-tickets {
+        background-size: 57px 10px;
+        background-image: url("../images/mobile/btn-ticket@2x.png");
+    }
+
+    ul.rounded-buttons li a.about-restaurants {
+        background-size: 63px 22px;
+        background-image: url("../images/mobile/btn-restaurants@2x.png");
     }
 
 }

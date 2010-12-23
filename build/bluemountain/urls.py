@@ -36,4 +36,19 @@ urlpatterns += patterns('django.views.generic.simple',
     url(r"^contact/$", "direct_to_template", {
         "template": "contact.html",
     }, name="contact"),
+
+    # About / Resort Map
+    url(r"^about/$", "direct_to_template", {
+        "template": "about/resort-map.html",
+    }, name="about_resort_map"),
+
+    # About / Ticket Info
+    url(r"^about/ticket-info/$", "direct_to_template", {
+        "template": "about/ticket-info.html",
+    }, name="about_ticket_info"),
+
+    # About / Restaurants and Hotels
+    url(r"^about/restaurants-hotels/$", "direct_to_template", {
+        "template": "about/restaurants-hotels.html",
+    }, name="about_restaurants_hotels"),
 )

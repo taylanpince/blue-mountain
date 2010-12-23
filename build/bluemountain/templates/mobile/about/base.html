@@ -1,0 +1,10 @@
+{% extends "mobile/sub.html" %}
+
+
+{% block subnav %}
+<ul class="rounded-buttons">
+	<li class="left {% block nav_map %}{% endblock %}"><a href="{% url about_resort_map %}" class="about-map">Live Conditions</a></li>
+	<li class="{% block nav_tickets %}{% endblock %}"><a href="{% url about_ticket_info %}" class="about-tickets">Ticket Info</a></li>
+	<li class="right {% block nav_restaurants %}{% endblock %}"><a href="{% url about_restaurants_hotels %}" class="about-restaurants">Restaurants &amp; Hotels</a></li>
+</ul>
+{% endblock %}

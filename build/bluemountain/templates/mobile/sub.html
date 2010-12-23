@@ -1,0 +1,8 @@
+{% extends "mobile/base.html" %}
+
+{% block navigation %}
+<div id="Header">
+	<a href="{% url home %}" class="home">Home</a>
+	{% block subnav %}{% endblock %}
+</div>
+{% endblock %}
