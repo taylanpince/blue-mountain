@@ -20,7 +20,11 @@
 		{{ formset.management_form }}
 		
 		{% for form in formset.forms %}
-		{{ form.as_p }}
+		{% if form.email.errors %}<p class="errors">{{ form.email.errors|join:", " }}</p>{% endif %}
+		<p>
+			{{ form.email.label_tag }}
+			{{ form.email }}
+		</p>
 		{% endfor %}
 		
 		<input type="submit" class="submit" />
