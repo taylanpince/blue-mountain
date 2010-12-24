@@ -42,13 +42,14 @@
 		<!-- An empty div which will be populated using jQuery -->
 		<div id="page_navigation"></div>
 	</div>
-	<div class="grid_12"><a href="{% url contests_enter %}"><div class="enter spacer">Enter</div></a></div>
 </div>
 
 {% endblock %}
 
 
 {% block extra_js %}
+{{ block.super }}
+
 <script type="text/javascript">
 //<![CDATA[
 	Shadowbox.init({
