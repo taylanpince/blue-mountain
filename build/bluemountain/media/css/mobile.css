@@ -100,8 +100,8 @@ p {
     line-height: 15px;
 }
 
-p.bottom-margin {
-    margin-bottom: 40px;
+p.no-margin {
+    margin-bottom: 0px;
 }
 
 body.home a.enter {
