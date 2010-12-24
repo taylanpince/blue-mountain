@@ -1,0 +1,19 @@
+{% extends "mobile/contests/base.html" %}
+
+{% load content_block_tags %}
+
+
+{% block content %}
+
+<h1 class="contest">Blue Mountain Blue Bird Contest</h1>
+
+<div class="blue-box">
+	<h2 class="contest-thanks">Thanks for Entering</h2>
+	
+	{% content_block "mobile-contest-thanks" %}
+	
+</div>
+
+<hr class="no-margin" />
+
+{% endblock %}

@@ -5,7 +5,7 @@
  */
 
 
-/* @group Mobile */
+/* @group Global */
 
 body {
     background-color: #2e4c63, transparent;
@@ -25,6 +25,14 @@ hr {
     height: 27px;
     margin-bottom: 20px;
     background: transparent url("../images/mobile/bg-separator.png") 50% 50% no-repeat;
+}
+
+hr.no-margin {
+    margin: -5px 0px 0px 0px;
+}
+
+hr.negative-margin {
+    margin: -5px 0px 20px 0px;
 }
 
 #Container,
@@ -63,6 +71,80 @@ body.home #Content {
     text-align: center;
 }
 
+div.white-box {
+    padding: 10px;
+    color: #192C39;
+    border-radius: 6px;
+    background: transparent -webkit-gradient(linear, 0% 50%, 100% 50%, from(#FFF), to(#EDEDED)) top left no-repeat;
+}
+
+div.blue-box {
+    color: #fff;
+    padding: 10px;
+    border-radius: 6px;
+    background-color: rgba(45, 79, 101, 0.7);
+}
+
+div.two-column {
+    -webkit-column-count: 2;
+    -webkit-column-gap: 20px;
+}
+
+/* @end */
+
+
+/* @group Links and Text */
+
+p {
+    font-size: 11px;
+    line-height: 15px;
+}
+
+p.bottom-margin {
+    margin-bottom: 40px;
+}
+
+body.home a.enter {
+    height: 40px;
+    display: block;
+    color: transparent;
+    background: transparent url("../images/mobile/btn-enter.png") 50% 50% no-repeat;
+}
+
+a.home {
+    width: 42px;
+    height: 43px;
+    float: left;
+    color: transparent;
+    margin-top: 1px;
+    background: transparent url("../images/mobile/btn-home.png") top left no-repeat;
+}
+
+a.google-map {
+    height: 29px;
+    display: block;
+    color: transparent;
+    margin-bottom: 15px;
+    background: transparent url("../images/mobile/btn-google-map.png") 50% 50% no-repeat;
+}
+
+a.send-text {
+    height: 48px;
+    display: block;
+    color: transparent;
+    background: transparent url("../images/mobile/btn-send-text.png") 50% 50% no-repeat;
+}
+
+ul.no-bullet li {
+    margin-left: 0px;
+    list-style-type: none;
+}
+
+/* @end */
+
+
+/* @group Headers */
+
 h1,
 h2 {
     color: #fff;
@@ -70,6 +152,7 @@ h2 {
 
 h1 {
     line-height: 26px;
+    text-align: center;
 }
 
 body.home h1 {
@@ -85,26 +168,126 @@ body.home h2 {
     background: transparent url("../images/mobile/header-intro-2.png") 50% 50% no-repeat;
 }
 
-body.home a.enter {
-    height: 40px;
-    display: block;
-    color: transparent;
-    background: transparent url("../images/mobile/btn-enter.png") 50% 50% no-repeat;
-}
-
-a.home {
-    width: 42px;
-    height: 43px;
-    float: left;
-    color: transparent;
-    background: transparent url("../images/mobile/btn-home.png") top left no-repeat;
-}
-
 h1.about {
     height: 13px;
     color: transparent;
     background: transparent url("../images/mobile/header-about.png") 50% 50% no-repeat;
 }
+
+h1.contest {
+    height: 32px;
+    color: transparent;
+    background: transparent url("../images/mobile/header-contest.png") 50% 50% no-repeat;
+}
+
+h1.contest-rules {
+    height: 9px;
+    color: transparent;
+    background: transparent url("../images/mobile/header-rules.png") 50% 50% no-repeat;
+}
+
+h2.contest-thanks {
+    height: 21px;
+    color: transparent;
+    background: transparent url("../images/mobile/header-thanks.png") 50% 50% no-repeat;
+}
+
+h2.facebook {
+    height: 39px;
+    color: transparent;
+    background: transparent url("../images/mobile/header-facebook.png") 50% 50% no-repeat;
+}
+
+h3,
+h4,
+h5,
+h6 {
+    font-family: Trebuchet, "Trebuchet MS", Helvetica, Arial, sans-serif;
+}
+
+h3 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+h4 {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+h5 {
+    font-size: 11px;
+    font-weight: normal;
+    margin-bottom: 8px;
+}
+
+h6 {
+    font-size: 10px;
+    line-height: 11px;
+    font-weight: normal;
+}
+
+/* @end */
+
+
+/* @group Forms */
+
+label {
+    display: block;
+    margin: 0px 0px 2px 0px;
+}
+
+input {
+    margin: 0px;
+    height: 16px;
+    width: 270px;
+    border-radius: 6px;
+    padding: 2px 5px 2px 5px;
+    border: 1px solid rgba(62, 162, 207, 0.5);
+    background: transparent -webkit-gradient(linear, 0% 0%, 0% 100%, from(#CDD5DB), to(#B5C1C9));
+}
+
+div.two-column input {
+    width: 116px;
+}
+
+input.submit {
+    border: none;
+    height: 38px;
+    display: block;
+    color: transparent;
+    background: transparent url("../images/mobile/btn-submit.png") 50% 50% no-repeat;
+}
+
+p.checkbox {
+    overflow: hidden;
+    position: static;
+}
+
+p.checkbox input {
+    float: left;
+    display: inline;
+    width: 12px;
+    margin: 2px 6px 0px 0px;
+}
+
+p.checkbox label {
+    float: left;
+    display: inline;
+    width: 98px;
+}
+
+p.errors {
+    color: #db5c4f;
+    margin-bottom: 2px;
+}
+
+/* @end */
+
+
+/* @group Rounded Buttons */
 
 ul.rounded-buttons {
     width: 300px;
@@ -115,7 +298,7 @@ ul.rounded-buttons {
 
 #Header ul.rounded-buttons {
     width: 252px;
-    height: 42px;
+    height: 44px;
     float: left;
     display: inline;
     margin-left: 6px;
@@ -200,6 +383,18 @@ ul.rounded-buttons li a.about-restaurants {
     background-image: url("../images/mobile/btn-restaurants.png");
 }
 
+ul.rounded-buttons li a.contest-prizes {
+    background-image: url("../images/mobile/btn-prizes.png");
+}
+
+ul.rounded-buttons li a.contest-winners {
+    background-image: url("../images/mobile/btn-winners.png");
+}
+
+ul.rounded-buttons li a.contest-rules {
+    background-image: url("../images/mobile/btn-rules.png");
+}
+
 /* @end */
 
 
@@ -227,6 +422,21 @@ ul.rounded-buttons li a.about-restaurants {
         background-image: url("../images/mobile/btn-home@2x.png");
     }
     
+    a.google-map {
+        background-size: 117px 29px;
+        background-image: url("../images/mobile/btn-google-map@2x.png");
+    }
+    
+    a.send-text {
+        background-size: 176px 48px;
+        background-image: url("../images/mobile/btn-send-text@2x.png");
+    }
+    
+    input.submit {
+        background-size: 112px 38px;
+        background-image: url("../images/mobile/btn-submit@2x.png");
+    }
+    
     hr {
         background-size: 303px 27px;
         background-image: url("../images/mobile/bg-separator@2x.png");
@@ -245,6 +455,26 @@ ul.rounded-buttons li a.about-restaurants {
     h1.about {
         background-size: 303px 13px;
         background-image: url("../images/mobile/header-about@2x.png");
+    }
+    
+    h1.contest {
+        background-size: 303px 32px;
+        background-image: url("../images/mobile/header-contest@2x.png");
+    }
+    
+    h1.contest-rules {
+        background-size: 303px 9px;
+        background-image: url("../images/mobile/header-rules@2x.png");
+    }
+    
+    h2.contest-thanks {
+        background-size: 222px 21px;
+        background-image: url("../images/mobile/header-thanks@2x.png");
+    }
+    
+    h2.facebook {
+        background-size: 282px 39px;
+        background-image: url("../images/mobile/header-facebook@2x.png");
     }
     
     ul.rounded-buttons li {
@@ -285,6 +515,21 @@ ul.rounded-buttons li a.about-restaurants {
     ul.rounded-buttons li a.about-restaurants {
         background-size: 63px 22px;
         background-image: url("../images/mobile/btn-restaurants@2x.png");
+    }
+    
+    ul.rounded-buttons li a.contest-prizes {
+        background-size: 33px 9px;
+        background-image: url("../images/mobile/btn-prizes@2x.png");
+    }
+
+    ul.rounded-buttons li a.contest-winners {
+        background-size: 47px 9px;
+        background-image: url("../images/mobile/btn-winners@2x.png");
+    }
+
+    ul.rounded-buttons li a.contest-rules {
+        background-size: 29px 9px;
+        background-image: url("../images/mobile/btn-rules@2x.png");
     }
 
 }

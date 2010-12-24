@@ -1,0 +1,38 @@
+{% extends "mobile/contests/base.html" %}
+
+{% load content_block_tags %}
+
+
+{% block content %}
+
+<h1 class="contest">Blue Mountain Blue Bird Contest</h1>
+
+<div class="blue-box">
+	<h2 class="contest-thanks">Thanks for Entering</h2>
+	
+	{% content_block "mobile-contest-share" %}
+
+	<form method="post" action="{% url contests_share %}">
+		{% csrf_token %}
+		
+		{% if formset.non_form_errors %}<p class="errors">{{ formset.non_form_errors|join:", " }}</p>{% endif %}
+		
+		{{ formset.management_form }}
+		
+		{% for form in formset.forms %}
+		{{ form.as_p }}
+		{% endfor %}
+		
+		<input type="submit" class="submit" />
+	</form>
+	
+	<br />
+	
+	<h2 class="facebook">Post on Facebook that you’re looking for friends to come along if you win.</h2>
+	
+	
+</div>
+
+<hr class="no-margin" />
+
+{% endblock %}

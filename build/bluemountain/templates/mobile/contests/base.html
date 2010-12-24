@@ -1,0 +1,10 @@
+{% extends "mobile/sub.html" %}
+
+
+{% block subnav %}
+<ul class="rounded-buttons">
+	<li class="left {% block nav_prizes %}{% endblock %}"><a href="{% url contests_prizes %}" class="contest-prizes">Prizes</a></li>
+	<li class="{% block nav_winners %}{% endblock %}"><a href="{% url contests_winners %}" class="contest-winners">Winners</a></li>
+	<li class="right {% block nav_rules %}{% endblock %}"><a href="{% url contests_rules %}" class="contest-rules">Rules</a></li>
+</ul>
+{% endblock %}

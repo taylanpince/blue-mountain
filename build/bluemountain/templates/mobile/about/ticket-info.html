@@ -1,9 +1,18 @@
 {% extends "mobile/about/base.html" %}
 
+{% load content_block_tags %}
+
 
 {% block nav_tickets %}active{% endblock %}
 
 {% block content %}
+
 <h1 class="about">About Blue</h1>
+
+<div class="white-box">
+	{% content_block "ticket-info" %}
+</div>
+
+<hr class="no-margin" />
 
 {% endblock %}

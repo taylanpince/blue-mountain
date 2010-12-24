@@ -1,0 +1,39 @@
+{% extends "mobile/contests/base.html" %}
+
+{% load thumbnail%}
+{% load content_block_tags %}
+
+
+{% block nav_winners %}active{% endblock %}
+
+{% block content %}
+
+<h1 class="contest">Blue Mountain Blue Bird Contest</h1>
+
+<div class="white-box">
+	<h3>Winners</h3>
+
+	{% content_block "contest-winners" %}
+
+	{% regroup winners by contest as contests %}
+
+	{% for contest in contests %}
+	<h4>{{ contest.grouper }}</h4>
+	<ul class="no-bullet">
+		{% for winner in contest.list %}
+		<li>
+			{% thumbnail winner.photo "125x90" as photo %}
+			<img src="{{ photo.url }}" alt="{{ winner.name }}" />
+			{% empty %}
+			<p>No Photo</p>
+			{% endthumbnail %}
+			<p>{{ winner.name }}</p>
+		</li>
+		{% endfor %}
+	</ul>
+	{% endfor %}
+</div>
+
+<hr class="no-margin" />
+
+{% endblock %}

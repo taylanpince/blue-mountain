@@ -133,3 +133,13 @@ def thanks(request):
     return render_to_response("contests/thanks.html", {
 
     }, context_instance=RequestContext(request))
+
+
+def prizes(request):
+    """
+    Renders prizes page
+    """
+    return render_to_response("contests/prizes.html", {
+
+    }, context_instance=RequestContext(request))
+
