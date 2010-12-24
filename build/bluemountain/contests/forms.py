@@ -13,8 +13,10 @@ class ContestEntryForm(forms.ModelForm):
 
         super(ContestEntryForm, self).__init__(*args, **kwargs)
 
+        self.fields.get("newsletter").label = _("Yes, please send me Blue Mountain deals and updates")
+
     email_confirm = forms.EmailField(label=_("Confirm Email Address"))
-    agreement = forms.BooleanField(label=_("I have read the rules and agree to all terms and conditions."))
+    agreement = forms.BooleanField(label=_("I Have Read The Rules*"))
 
     class Meta:
         model = ContestEntry

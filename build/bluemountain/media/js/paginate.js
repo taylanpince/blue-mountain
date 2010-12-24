@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
 	//how much items per page to show
-	var show_per_page = 10;
+	var show_per_page = 12;
 	//getting the amount of elements inside content div
 	var number_of_items = $('#photos').children().size();
 	//calculate the number of pages we are going to have
@@ -19,13 +19,13 @@ $(document).ready(function(){
 		- links to specific pages
 		- link to next page
 	*/
-	var navigation_html = '<a class="previous_link" href="javascript:previous();">Prev</a>';
+	var navigation_html = '<h1><a class="previous_link" href="javascript:previous();">Prev</a></h1>';
 	var current_link = 0;
 	while(number_of_pages > current_link){
 		navigation_html += '<a class="page_link" href="javascript:go_to_page(' + current_link +')" longdesc="' + current_link +'">'+ (current_link + 1) +'</a>';
 		current_link++;
 	}
-	navigation_html += '<a class="next_link" href="javascript:next();"> Next</a>';
+	navigation_html += '<h1><a class="next_link" href="javascript:next();"> Next</a></h1>';
 
 	$('#page_navigation').html(navigation_html);
 

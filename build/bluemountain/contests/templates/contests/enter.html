@@ -9,45 +9,46 @@
 	<div class="grid_12">
 		{% content_block "contest-entry" %}
 	</div>
-	<div class="grid_12">
-		<form method="post" action="{% url contests_enter %}">
-			{% csrf_token %}
-			<p>
-				{% if form.email.errors %}{{ form.email.errors }}{% endif %}
+
+	<form method="post" action="{% url contests_enter %}">
+		{% csrf_token %}
+		<fieldset>
+			<div class="grid_6">
+				{% if form.email.errors %}<p class="errors">{{ form.email.errors|join:", " }}</p>{% endif %}
 				{{ form.email.label_tag }}
 				{{ form.email }}
-			</p>
-			<p>
-				{% if form.email_confirm.errors %}{{ form.email_confirm.errors }}{% endif %}
+				{% if form.email_confirm.errors %}<p class="errors">{{ form.email_confirm.errors|join:", " }}</p>{% endif %}
 				{{ form.email_confirm.label_tag }}
 				{{ form.email_confirm }}
-			</p>
-			<p>
-				{% if form.first_name.errors %}{{ form.first_name.errors }}{% endif %}
+			</div>
+			<div class="grid_6">
+				{% if form.first_name.errors %}<p class="errors">{{ form.first_name.errors|join:", " }}</p>{% endif %}
 				{{ form.first_name.label_tag }}
 				{{ form.first_name }}
-			</p>
-			<p>
-				{% if form.last_name.errors %}{{ form.last_name.errors }}{% endif %}
+				{% if form.last_name.errors %}<p class="errors">{{ form.last_name.errors|join:", " }}</p>{% endif %}
 				{{ form.last_name.label_tag }}
 				{{ form.last_name }}
-			</p>
-			<p>
+			</div>
+
+			<div class="checkbox">
 				{{ form.newsletter }}
-				{{ form.newsletter.label_tag }}
-			</p>
-			<p>
-				{% if form.agreement.errors %}{{ form.agreement.errors }}{% endif %}
+				{{ form.newsletter.label }}
+				<br />
+				{% if form.agreement.errors %}<p class="errors">{{ form.agreement.errors|join:", " }}</p>{% endif %}
 				{{ form.agreement }}
-				{{ form.agreement.label_tag }}
-			</p>
-			<p><input id="sendMail" type="submit" name="enter" value="ENTER" /></p>
+				{{ form.agreement.label }}
+			</div>
+
+			<p><input id="sendMail" type="submit" name="enter" value="" onclick="closeForm()" /></p>
+
 			<p>
 				<a name="fb_share"></a> 
 				<script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
 			</p>
-		</form>
-	</div>
+		</fieldset>
+	</form>
+		
+	<div class="grid_12 spacer center"><h1>Or Enter By Text Instead</h1><br><h3>Text "BLUEBIRD" to 28767<h3></div>
 </div>
 
 {% endblock %}
