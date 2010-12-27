@@ -1,5 +1,7 @@
 {% extends "mobile/about/base.html" %}
 
+{% load content_block_tags %}
+
 
 {% block nav_map %}active{% endblock %}
 
@@ -8,33 +10,19 @@
 <h1 class="about">About Blue</h1>
 
 <div class="white-box">
-	<h3>Blue Mountain Resorts Limited</h3>
-	<h5>108 Jozo Weider Blvd<br />Blue Mountains, Ontario, Canada L9Y 3Z2</h5>
+	{% content_block "resort-address" %}
 
 	<a href="#" class="google-map">Map it on Google</a>
 
 	<div class="two-column">
-		<h6>Telephone:</h6>
-		<h4>705.445.0231</h4>
-		
-		<h6>For Reservations Call:</h6>
-		<h4>1.877.445.0231</h4>
-		
-		<h6>Fax:</h6>
-		<h4>705.444.1751</h4>
-
-		<h6>E-mail:</h6>
-		<h4>mail@bluemountain.ca</h4>
+		{% content_block "resort-contact-info" %}
 	</div>
 </div>
 
 <hr class="no-margin" />
 
 <div class="white-box">
-	<h4>How to Get Here<br />
-	Make Your Way to Blue Mountain</h4>
-
-	<p>They say getting there is half the battle. In an effort to make getting to Blue Mountain a little easier, we have highlighted some recommended routes to help get you here. These routes may not be the fastest; however we feel that they are the simplest to follow. We have highlighted several key intersections from which you can travel.</p>
+	{% content_block "resort-directions" %}
 </div>
 
 {% endblock %}
