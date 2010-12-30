@@ -1,3 +1,4 @@
+from django.contrib.localflavor.us.models import PhoneNumberField
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
@@ -26,6 +27,8 @@ class ContestEntry(models.Model):
     email = models.EmailField(_("Email Address"), max_length=255)
     first_name = models.CharField(_("First Name"), max_length=255)
     last_name = models.CharField(_("Last Name"), max_length=255)
+    birth_date = models.DateField(_("Birth Date"))
+    phone_number = PhoneNumberField(_("Phone Number"))
     entry_date = models.DateTimeField(_("Entry Date"), auto_now_add=True)
     newsletter = models.BooleanField(_("Newsletter Subscription"), default=False)
 

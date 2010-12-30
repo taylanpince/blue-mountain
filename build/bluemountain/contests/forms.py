@@ -14,6 +14,8 @@ class ContestEntryForm(forms.ModelForm):
         super(ContestEntryForm, self).__init__(*args, **kwargs)
 
         self.fields.get("newsletter").label = _("Yes, please send me Blue Mountain deals and updates")
+        self.fields.get("birth_date").label = _("Birth Date (YYYY-MM-DD)")
+        self.fields.get("phone_number").label = _("Phone Number (123-123-1234)")
 
     email_confirm = forms.EmailField(label=_("Confirm Email Address"))
     agreement = forms.BooleanField(label=_("I Have Read The Rules*"))

@@ -20,6 +20,9 @@
 				{% if form.email_confirm.errors %}<p class="errors">{{ form.email_confirm.errors|join:", " }}</p>{% endif %}
 				{{ form.email_confirm.label_tag }}
 				{{ form.email_confirm }}
+				{% if form.birth_date.errors %}<p class="errors">{{ form.birth_date.errors|join:", " }}</p>{% endif %}
+				{{ form.birth_date.label_tag }}
+				{{ form.birth_date }}
 			</div>
 			<div class="grid_6">
 				{% if form.first_name.errors %}<p class="errors">{{ form.first_name.errors|join:", " }}</p>{% endif %}
@@ -28,6 +31,9 @@
 				{% if form.last_name.errors %}<p class="errors">{{ form.last_name.errors|join:", " }}</p>{% endif %}
 				{{ form.last_name.label_tag }}
 				{{ form.last_name }}
+				{% if form.phone_number.errors %}<p class="errors">{{ form.phone_number.errors|join:", " }}</p>{% endif %}
+				{{ form.phone_number.label_tag }}
+				{{ form.phone_number }}
 			</div>
 
 			<div class="checkbox">
