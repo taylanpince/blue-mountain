@@ -25,6 +25,9 @@
 {% block body %}
 
 {% block header %}
+
+{% next_contest as flight %}
+
 <!-- Parallax swfObject start -->
 <div id="header">
 	<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="1200" height="300" id="FlashID" title="Blue Mountain">
@@ -32,6 +35,8 @@
 		<param name="quality" value="high" />
 		<param name="wmode" value="transparent" />
 		<param name="swfversion" value="9.0.45.0" />
+		<param name="allowScriptAccess" value="always" />
+		{% if flight %}<param name="flashVars" value="varMonth={{ flight.start_date.month }}&varDay={{ flight.start_date.day }}" />{% endif %}
 		<!-- This param tag prompts users with Flash Player 6.0 r65 and higher to download the latest version of Flash Player. Delete it if you don’t want users to see the prompt. -->
 		<param name="expressinstall" value="{{ MEDIA_URL }}flash/expressInstall.swf" />
 		<!-- Next object tag is for non-IE browsers. So hide it from IE using IECC. -->
@@ -41,8 +46,8 @@
 		<param name="quality" value="high" />
 		<param name="wmode" value="transparent" />
 		<param name="swfversion" value="9.0.45.0" />
+		<param name="allowScriptAccess" value="always" />
 		<param name="expressinstall" value="{{ MEDIA_URL }}flash/expressInstall.swf" />
-		{% next_contest as flight %}
 		{% if flight %}<param name="flashVars" value="varMonth={{ flight.start_date.month }}&varDay={{ flight.start_date.day }}" />{% endif %}
 			<!-- The browser displays the following alternative content for users with Flash Player 6.0 and older. -->
 			<div>
