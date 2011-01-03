@@ -73,6 +73,7 @@ INSTALLED_APPS = (
     'sorl.thumbnail',
     'south',
 
+    'contact',
     'content_blocks',
     'contests',
     'events',

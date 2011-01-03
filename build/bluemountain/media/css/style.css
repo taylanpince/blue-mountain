@@ -343,3 +343,16 @@ fieldset {
     height: 110px;
     bottom: 26px;
 }
+
+#ContactForm label {
+    margin-left: 10px;
+}
+
+body.contact h4 {
+    color: #11c3f6;
+    font-weight: normal;
+}
+
+body.contact #content p {
+    margin-bottom: 20px;
+}

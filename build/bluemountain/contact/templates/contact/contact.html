@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% load content_block_tags %}
+
+{% block class %}contact{% endblock %}
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+
+<h2>Blue Mountain</h2>
+<h1>Contact Us</h1>
+
+<div class="spacer">
+	<div class="grid_6" align="left">
+		{% content_block "contact" %}
+	</div>
+
+	<div class="grid_6" align="left">
+		<form method="post" id="ContactForm" action="{% url contact %}">
+			{% csrf_token %}
+
+			{% if form.email.errors %}<p class="errors">{{ form.email.errors|join:", " }}</p>{% endif %}
+			{{ form.email.label_tag }}
+			{{ form.email }}
+
+			{% if form.subject.errors %}<p class="errors">{{ form.subject.errors|join:", " }}</p>{% endif %}
+			{{ form.subject.label_tag }}
+			{{ form.subject }}
+
+			{% if form.message.errors %}<p class="errors">{{ form.message.errors|join:", " }}</p>{% endif %}
+			{{ form.message.label_tag }}
+			{{ form.message }}
+
+			<p><input id="sendContact" type="submit" name="enter" value="" /></p>
+		</form>
+	</div>
+</div>
+
+{% endblock %}

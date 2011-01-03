@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% load content_block_tags %}
+
+
+{% block content %}
+
+<h2>Blue Mountain</h2>
+<h1>Contact Us</h1>
+
+<div class="spacer">
+	<div class="grid_12">
+		{% content_block "contact-thanks" %}
+	</div>
+</div>
+
+{% endblock %}

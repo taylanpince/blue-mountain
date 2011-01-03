@@ -1,0 +1,4 @@
+Email: {{ message.email }}
+Subject: {{ message.subject }}
+Message:
+{{ message.message }}

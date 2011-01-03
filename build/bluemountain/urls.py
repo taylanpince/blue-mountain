@@ -14,6 +14,9 @@ urlpatterns = patterns('',
     
     # Contests
     (r'^contest/', include('contests.urls')),
+    
+    # Contact
+    (r'^contact/', include('contact.urls')),
 )
 
 urlpatterns += patterns('django.views.generic.simple',
@@ -31,11 +34,6 @@ urlpatterns += patterns('django.views.generic.simple',
     url(r"^terms/$", "direct_to_template", {
         "template": "terms.html",
     }, name="terms"),
-
-    # Contact
-    url(r"^contact/$", "direct_to_template", {
-        "template": "contact.html",
-    }, name="contact"),
 
     # About / Resort Map
     url(r"^about/$", "direct_to_template", {
