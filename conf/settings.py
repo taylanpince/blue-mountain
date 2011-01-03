@@ -14,4 +14,4 @@ DATABASES = {
 
 MEDIA_URL = 'http://media.lovewinterturnblue.ca/'
 
-CONTACT_EMAIL = 'taylanpince@gmail.com'
+CONTACT_EMAIL = 'contest@bluemountain.ca'
