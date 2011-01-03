@@ -239,6 +239,10 @@ label {
     margin: 0px 0px 2px 0px;
 }
 
+label a {
+    color: #fff !important;
+}
+
 input {
     margin: 0px;
     height: 16px;

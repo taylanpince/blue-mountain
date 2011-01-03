@@ -16,30 +16,26 @@
 		{% if form.non_field_errors %}<p class="errors">{{ form.non_field_errors|join:", " }}</p>{% endif %}
 
 		<div class="two-column">
-			{% if form.email.errors %}<p class="errors">{{ form.email.errors|join:", " }}</p>{% endif %}
+			{% if form.first_name.errors %}<p class="errors">{{ form.first_name.errors|join:", " }}</p>{% endif %}
 			<p>
-				{{ form.email.label_tag }}
-				{{ form.email }}
-			</p>
-			{% if form.email_confirm.errors %}<p class="errors">{{ form.email_confirm.errors|join:", " }}</p>{% endif %}
-			<p>
-				{{ form.email_confirm.label_tag }}
-				{{ form.email_confirm }}
+				{{ form.first_name.label_tag }}
+				{{ form.first_name }}
 			</p>
 			{% if form.birth_date.errors %}<p class="errors">{{ form.birth_date.errors|join:", " }}</p>{% endif %}
 			<p>
 				{{ form.birth_date.label_tag }}
 				{{ form.birth_date }}
 			</p>
+			{% if form.email.errors %}<p class="errors">{{ form.email.errors|join:", " }}</p>{% endif %}
+			<p>
+				{{ form.email.label_tag }}
+				{{ form.email }}
+			</p>
 			<p class="checkbox no-margin">
 				{{ form.newsletter }}
 				{{ form.newsletter.label_tag }}
 			</p>
-			{% if form.first_name.errors %}<p class="errors">{{ form.first_name.errors|join:", " }}</p>{% endif %}
-			<p>
-				{{ form.first_name.label_tag }}
-				{{ form.first_name }}
-			</p>
+
 			{% if form.last_name.errors %}<p class="errors">{{ form.last_name.errors|join:", " }}</p>{% endif %}
 			<p>
 				{{ form.last_name.label_tag }}
@@ -49,6 +45,11 @@
 			<p>
 				{{ form.phone_number.label_tag }}
 				{{ form.phone_number }}
+			</p>
+			{% if form.email_confirm.errors %}<p class="errors">{{ form.email_confirm.errors|join:", " }}</p>{% endif %}
+			<p>
+				{{ form.email_confirm.label_tag }}
+				{{ form.email_confirm }}
 			</p>
 			{% if form.agreement.errors %}<p class="errors">{{ form.agreement.errors|join:", " }}</p>{% endif %}
 			<p class="checkbox">
