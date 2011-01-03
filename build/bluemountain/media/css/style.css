@@ -338,3 +338,8 @@ a:active {
 fieldset {
     clear: both;
 }
+
+#footerContent {
+    height: 110px;
+    bottom: 26px;
+}
