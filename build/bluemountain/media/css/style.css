@@ -112,7 +112,7 @@ text-align:center;
 }
 #bottomColor{
 width:960px;
-height:600px;
+height:616px;
 z-index:-99;
 position:absolute;
 background: url('../images/bottomImage.jpg') repeat-x;
