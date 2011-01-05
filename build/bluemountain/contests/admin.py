@@ -9,6 +9,7 @@ class ContestAdmin(admin.ModelAdmin):
     search_fields = ("title",)
 
     save_on_top = True
+    save_as = True
 
 
 class ContestEntryAdmin(admin.ModelAdmin):
