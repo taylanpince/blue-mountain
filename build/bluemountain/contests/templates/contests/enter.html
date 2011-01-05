@@ -37,12 +37,12 @@
 			</div>
 
 			<div class="checkbox">
-				{{ form.newsletter }}
-				{{ form.newsletter.label }}
-				<br />
 				{% if form.agreement.errors %}<p class="errors">{{ form.agreement.errors|join:", " }}</p>{% endif %}
 				{{ form.agreement }}
 				{{ form.agreement.label }}
+				<br />
+				{{ form.newsletter }}
+				{{ form.newsletter.label }}
 			</div>
 
 			<p><input id="sendMail" type="submit" name="enter" value="" onclick="closeForm()" /></p>
