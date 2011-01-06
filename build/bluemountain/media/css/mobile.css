@@ -197,6 +197,47 @@ ul.three-column li.last-child {
     width: 86px;
 }
 
+li.weather-sunny,
+li.weather-rainy,
+li.weather-cloudy,
+li.weather-snow-showers,
+li.weather-mixed,
+li.weather-snow,
+li.weather-rain,
+li.weather-windy {
+    height: 150px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+li.weather-sunny {
+    background-image: url("../images/mobile/weather-sunny.png");
+}
+
+li.weather-rain {
+    background-image: url("../images/mobile/weather-rain.png");
+}
+
+li.weather-cloudy {
+    background-image: url("../images/mobile/weather-cloudy.png");
+}
+
+li.weather-snow {
+    background-image: url("../images/mobile/weather-snow.png");
+}
+
+li.weather-snow-showers {
+    background-image: url("../images/mobile/weather-snow-showers.png");
+}
+
+li.weather-mixed {
+    background-image: url("../images/mobile/weather-mixed.png");
+}
+
+li.weather-windy {
+    background-image: url("../images/mobile/weather-windy.png");
+}
+
 /* @end */
 
 
@@ -667,6 +708,44 @@ ul.rounded-buttons li a.conditions-trail {
     ul.rounded-buttons li a.conditions-trail {
         background-size: 52px 12px;
         background-image: url("../images/mobile/btn-trail-map@2x.png");
+    }
+
+    li.weather-sunny,
+    li.weather-rainy,
+    li.weather-snow-showers,
+    li.weather-mixed,
+    li.weather-snow,
+    li.weather-rain,
+    li.weather-windy {
+        background-size: 76px 76px;
+    }
+
+    li.weather-sunny {
+        background-image: url("../images/mobile/weather-sunny@2x.png");
+    }
+
+    li.weather-rain {
+        background-image: url("../images/mobile/weather-rain@2x.png");
+    }
+
+    li.weather-cloudy {
+        background-image: url("../images/mobile/weather-cloudy@2x.png");
+    }
+
+    li.weather-snow {
+        background-image: url("../images/mobile/weather-snow@2x.png");
+    }
+
+    li.weather-snow-showers {
+        background-image: url("../images/mobile/weather-snow-showers@2x.png");
+    }
+
+    li.weather-mixed {
+        background-image: url("../images/mobile/weather-mixed@2x.png");
+    }
+
+    li.weather-windy {
+        background-image: url("../images/mobile/weather-windy@2x.png");
     }
 
 }

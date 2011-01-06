@@ -25,11 +25,11 @@
 <hr class="no-margin" />
 
 <div class="blue-box">
+	<h6>3 Day Forecast</h6>
 	<ul class="three-column">
 		{% for day in weather.forecast|slice:":3" %}
-		<li class="{% if forloop.last %}last-child{% endif %}">
-			<h6 class="margin-bottom">{{ day.day }}</h6>
-			<h2>{{ day.status }}</h2>
+		<li class="{% if forloop.last %}last-child{% endif %} weather-{{ day.status }}">
+			<h3 class="margin-bottom">{{ day.day }}</h3>
 		</li>
 		{% endfor %}
 	</ul>

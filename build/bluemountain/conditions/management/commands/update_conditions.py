@@ -38,7 +38,7 @@ class Command(BaseCommand):
             if day:
                 forecast.append({
                     "day": day.get("day"),
-                    "status": day.get("icon"),
+                    "status": WEATHER_TYPES[int(day.get("icon"))],
                 })
 
         weather_data["forecast"] = forecast
