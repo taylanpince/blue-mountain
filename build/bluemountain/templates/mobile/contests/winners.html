@@ -1,6 +1,6 @@
 {% extends "mobile/contests/base.html" %}
 
-{% load thumbnail%}
+{% load thumbnail %}
 {% load content_block_tags %}
 
 
@@ -13,7 +13,7 @@
 <div class="white-box">
 	<h3>Winners</h3>
 
-	{% content_block "contest-winners" %}
+	{% content_block "mobile-contest-winners" %}
 
 	<div class="center">
 		{% for contest in contests %}
