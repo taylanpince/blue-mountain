@@ -91,6 +91,10 @@ div.two-column {
     -webkit-column-gap: 20px;
 }
 
+div.center {
+    text-align: center;
+}
+
 /* @end */
 
 

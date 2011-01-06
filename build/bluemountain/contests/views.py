@@ -112,6 +112,7 @@ def winners(request):
 
     return render_to_response("contests/winners.html", {
         "winners": winners,
+        "contests": Contest.objects.all(),
     }, context_instance=RequestContext(request))
 
 
