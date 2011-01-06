@@ -96,7 +96,8 @@ div.two-column {
 
 /* @group Links and Text */
 
-p {
+p,
+li {
     font-size: 11px;
     line-height: 15px;
 }
