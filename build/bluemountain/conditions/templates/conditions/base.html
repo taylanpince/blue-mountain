@@ -3,7 +3,7 @@
 
 {% block subnav %}
 <ul class="rounded-buttons">
-	<li class="left {% block nav_live %}{% endblock %}"><a href="{% url conditions_live %}" class="conditions-live">Live View</a></li>
-	<li class="right {% block nav_trail_map %}{% endblock %}"><a href="{% url conditions_trail_map %}" class="conditions-trail">Trail Map</a></li>
+	<li class="left {% block nav_live %}{% endblock %} wide"><a href="{% url conditions_live %}" class="conditions-live">Live View</a></li>
+	<li class="right {% block nav_trail_map %}{% endblock %} wide"><a href="{% url conditions_trail_map %}" class="conditions-trail">Trail Map</a></li>
 </ul>
 {% endblock %}

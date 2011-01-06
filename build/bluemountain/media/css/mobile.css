@@ -200,6 +200,12 @@ h1.contest-rules {
     background: transparent url("../images/mobile/header-rules.png") 50% 50% no-repeat;
 }
 
+h1.conditions {
+    height: 9px;
+    color: transparent;
+    background: transparent url("../images/mobile/header-conditions.png") 50% 50% no-repeat;
+}
+
 h2.contest-thanks {
     height: 21px;
     color: transparent;
@@ -387,6 +393,10 @@ ul.rounded-buttons li.active {
     background-image: url("../images/mobile/bg-bolts.png"), -webkit-gradient(linear, 0% 0%, 0% 100%, from(#2D4F65), to(#31BFFF));
 }
 
+#Header ul.rounded-buttons li.wide {
+    width: 124px !important;
+}
+
 ul.rounded-buttons li a {
     display: block;
     height: 40px;
@@ -438,6 +448,14 @@ ul.rounded-buttons li a.contest-winners {
 
 ul.rounded-buttons li a.contest-rules {
     background-image: url("../images/mobile/btn-rules.png");
+}
+
+ul.rounded-buttons li a.conditions-live {
+    background-image: url("../images/mobile/btn-live-view.png");
+}
+
+ul.rounded-buttons li a.conditions-trail {
+    background-image: url("../images/mobile/btn-trail-map.png");
 }
 
 /* @end */
@@ -512,6 +530,11 @@ ul.rounded-buttons li a.contest-rules {
         background-image: url("../images/mobile/header-rules@2x.png");
     }
     
+    h1.conditions {
+        background-size: 303px 9px;
+        background-image: url("../images/mobile/header-conditions@2x.png");
+    }
+    
     h2.contest-thanks {
         background-size: 222px 21px;
         background-image: url("../images/mobile/header-thanks@2x.png");
@@ -575,6 +598,16 @@ ul.rounded-buttons li a.contest-rules {
     ul.rounded-buttons li a.contest-rules {
         background-size: 29px 9px;
         background-image: url("../images/mobile/btn-rules@2x.png");
+    }
+
+    ul.rounded-buttons li a.conditions-live {
+        background-size: 54px 9px;
+        background-image: url("../images/mobile/btn-live-view@2x.png");
+    }
+
+    ul.rounded-buttons li a.conditions-trail {
+        background-size: 52px 12px;
+        background-image: url("../images/mobile/btn-trail-map@2x.png");
     }
 
 }
