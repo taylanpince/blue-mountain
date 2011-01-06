@@ -1,0 +1,28 @@
+{% extends "conditions/base.html" %}
+
+
+{% block nav_live %}active{% endblock %}
+
+{% block content %}
+
+<h1 class="conditions">Live Resort Conditions</h1>
+
+<div class="blue-box">
+	<h6>Lifts Open</h6>
+	<h1>{{ trails.open }} of {{ trails.total }}</h1>
+	<h6>Surface Conditions</h6>
+	<h3>{{ weather.surface }}</h3>
+	<h6>Weather Today</h6>
+	<h1>{{ weather.temperature }}</h1>
+</div>
+
+<hr class="no-margin" />
+
+<div class="blue-box">
+	{% for day in weather.forecast %}
+	<h6>{{ day.day }}</h6>
+	<h2>{{ day.status }}</h2>
+	{% endfor %}
+</div>
+
+{% endblock %}

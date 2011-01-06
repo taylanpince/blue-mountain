@@ -17,6 +17,9 @@ urlpatterns = patterns('',
     
     # Contact
     (r'^contact/', include('contact.urls')),
+    
+    # Conditions
+    (r'^conditions/', include('conditions.urls')),
 )
 
 urlpatterns += patterns('django.views.generic.simple',
