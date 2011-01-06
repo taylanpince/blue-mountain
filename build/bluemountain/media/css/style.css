@@ -367,6 +367,10 @@ a:active {
     text-decoration: none;
 }
 
+a:hover {
+    text-decoration: underline !important;
+}
+
 fieldset {
     clear: both;
 }
@@ -410,4 +414,12 @@ body.prizes #CopyContent ul {
 
 p.center {
     text-align: center;
+}
+
+a.twtr-join-conv {
+    color: #11C3F6 !important;
+}
+
+a.small {
+    font-size: 14px;
 }
