@@ -22,7 +22,7 @@
 				<img src="photo.url" alt="{{ winner.name }}" />
 				{% endthumbnail %}
 				{% empty %}
-				<img src="{{ MEDIA_URL }}images/winner1.png" alt="{{ contest.title }}" />
+				<img src="{{ MEDIA_URL }}images/winner{{ forloop.counter }}.png" alt="{{ contest.title }}" />
 				{% endfor %}
 			{% endfor %}
 		</div>
