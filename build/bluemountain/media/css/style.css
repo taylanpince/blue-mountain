@@ -14,7 +14,10 @@ background-color:#fff;
 .home{
 background-image:url('../images/mountains.jpg');
 }
-
+p{
+font-weight:lighter;
+line-height:20px;
+}
 #content{
 height:100%;
 line-height:24px;
@@ -22,7 +25,9 @@ line-height:24px;
 a {
 color:#11c3f6;
 }
-
+a:hover{
+text-decoration:underline;
+}
 div{
 display:block;
 }
@@ -30,22 +35,19 @@ display:block;
 top:280px;
 }
 h1{
-text-transform:uppercase;
 text-align:center;
-padding-bottom:10px;
 font-size:50px;
 color:#11c3f6;
 }
 h2{
-text-transform:uppercase;
 text-align:center;
-padding-bottom:10px;
 font-size:35px;
 color:#11c3f6;
 }
 h3{
 text-align:center;
 font-size:38px;
+font-weight:lighter;
 }
 #parallax {
 	height: 669px;
@@ -97,7 +99,7 @@ height:400px;
 width:20px;
 height:400px;
 float:left;
-background-image: url("../images/poll.jpg");
+background-image: url("../images/poll.png");
 background-repeat:no-repeat;
 }
 #snowRunsOpen{
@@ -131,9 +133,11 @@ border:none;
 #content {
 margin-top:50px;
 }
+#content li{
+margin-left:15px;}
 label{
 margin-left:30px;
-font-size:14px;
+font-size:12px;
 float:left;
 }
 input, textarea{
@@ -167,6 +171,18 @@ margin:10px auto;
 color:#fff;
 text-align:center;
 background-image: url('../images/submit.png');
+}
+.enter, #sendFriends{
+border:none;
+background:none;
+padding:10px;
+width:195px;
+height:72px;
+margin:10px auto;
+color:#fff;
+text-align:center;
+background-image: url('../images/send.png');
+background-repeat:no-repeat;
 }
 .enter, #sendContact{
 border:none;
@@ -209,7 +225,7 @@ height:432px;
 #footerContent{
 width:960px;
 position:absolute;
-height:184px;
+height:177px;
 bottom:0;
 left:50%;
 margin-left:-480px;
@@ -239,7 +255,15 @@ width:660px;
 margin:0 auto;
 }
 #photos img{
-margin:0 20px 25px 20px;
+margin:0 10px 15px 10px;
+float:left;
+}
+#winners{
+width:740px;
+margin:0 auto;
+}
+#winners img{
+margin:0 10px 15px 10px;
 float:left;
 }
 #page_navigation{
@@ -250,13 +274,21 @@ width:660px;
 #page_navigation h1{
 clear:none;
 padding:0;
-
+}
+.thin{
+width:600px;
+font-weight:lighter;
+line-height:20px;
+margin:auto auto 0 auto;
 }
 .page_link, .previous_link, .next_link{
 padding:0 25px;
 clear:none;
 text-decoration:none;
 float:left;
+}
+#emailFriend{
+width:530px;
 }
 .page_link{
 display:none;
@@ -292,7 +324,7 @@ width:600px;
 }
 #slidingIce {
 position:absolute;
-top:300px;
+top:-295px;
 left:0;
 right:0;
 margin:0 auto;
@@ -355,4 +387,19 @@ body.contact h4 {
 
 body.contact #content p {
     margin-bottom: 20px;
+}
+
+body.thanks #CopyContent h1 {
+    margin-bottom: 30px;
+}
+
+body.thanks #CopyContent p {
+    width: 600px;
+    font-weight: lighter;
+    line-height: 20px;
+    margin: auto auto 30px auto;
+}
+
+p.center {
+    text-align: center;
 }

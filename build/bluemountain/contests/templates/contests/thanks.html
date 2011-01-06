@@ -3,10 +3,12 @@
 {% load content_block_tags %}
 
 
+{% block class %}thanks{% endblock %}
+
 {% block content %}
 
 <div class="spacer">
-	<div class="grid_12">
+	<div class="grid_12 center" id="CopyContent">
 		{% content_block "contest-thanks" %}
 	</div>
 </div>
