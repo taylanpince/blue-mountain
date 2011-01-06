@@ -8,6 +8,7 @@
 /* @group Global */
 
 body {
+    font-family: Trebuchet, "Trebuchet MS", Helvetica, Arial, sans-serif;
     background-color: #2e4c63, transparent;
     background-repeat: no-repeat, repeat;
     background-position: 50% 50%, top left;
@@ -102,6 +103,14 @@ p {
 
 p.no-margin {
     margin-bottom: 0px;
+}
+
+a,
+a:link,
+a:visited,
+a:active {
+    color: #1B2D39;
+    text-decoration: none;
 }
 
 body.home a.enter {
@@ -208,7 +217,7 @@ h6 {
 h3 {
     font-size: 14px;
     font-weight: bold;
-    margin-bottom: 2px;
+    margin-bottom: 4px;
 }
 
 h4 {
@@ -286,6 +295,33 @@ p.checkbox label {
 p.errors {
     color: #db5c4f;
     margin-bottom: 2px;
+}
+
+/* @end */
+
+
+/* @group Tables */
+
+table {
+    margin-bottom: 10px;
+    border-collapse: collapse;
+}
+
+td,
+th {
+    font-size: 11px;
+    padding: 4px;
+    vertical-align: middle;
+    border: 1px solid #999;
+}
+
+th.center,
+td.center {
+    text-align: center;
+}
+
+thead th {
+    background-color: #b0b7bc;
 }
 
 /* @end */
