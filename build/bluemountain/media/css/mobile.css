@@ -154,6 +154,48 @@ ul.no-bullet li {
     list-style-type: none;
 }
 
+ul.two-column,
+ul.three-column {
+    width: 280px;
+    overflow: hidden;
+    position: static;
+    margin: 0px;
+    padding: 0px;
+}
+
+ul.two-column li,
+ul.three-column li {
+    float: left;
+    display: inline;
+    border-right: 1px solid #104055;
+    list-style-type: none;
+    margin: 0px 10px 0px 0px;
+    padding: 0px 10px 0px 0px;
+}
+
+ul.two-column li {
+    width: 124px;
+}
+
+ul.three-column li {
+    width: 76px;
+}
+
+ul.two-column li.last-child,
+ul.three-column li.last-child {
+    border-right: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+ul.two-column li.last-child {
+    width: 134px;
+}
+
+ul.three-column li.last-child {
+    width: 86px;
+}
+
 /* @end */
 
 
@@ -167,6 +209,18 @@ h2 {
 h1 {
     line-height: 26px;
     text-align: center;
+}
+
+h1.large {
+    line-height: 34px;
+    font-size: 30px;
+    text-align: left;
+}
+
+h1.very-large {
+    line-height: 42px;
+    font-size: 38px;
+    text-align: left;
 }
 
 body.home h1 {
@@ -247,6 +301,10 @@ h6 {
     font-size: 10px;
     line-height: 11px;
     font-weight: normal;
+}
+
+h6.margin-bottom {
+    margin-bottom: 4px;
 }
 
 /* @end */

@@ -8,21 +8,31 @@
 <h1 class="conditions">Live Resort Conditions</h1>
 
 <div class="blue-box">
-	<h6>Lifts Open</h6>
-	<h1>{{ trails.open }} of {{ trails.total }}</h1>
-	<h6>Surface Conditions</h6>
-	<h3>{{ weather.surface }}</h3>
-	<h6>Weather Today</h6>
-	<h1>{{ weather.temperature }}</h1>
+	<ul class="two-column">
+		<li>
+			<h6 class="margin-bottom">Lifts Open</h6>
+			<h1 class="large">{{ trails.open }} of {{ trails.total }}</h1>
+			<h6 class="margin-bottom">Surface Conditions</h6>
+			<h3>{{ weather.surface }}</h3>
+		</li>
+		<li class="last-child">
+			<h6 class="margin-bottom">Weather Today</h6>
+			<h1 class="very-large">{{ weather.temperature }}</h1>
+		</li>
+	</ul>
 </div>
 
 <hr class="no-margin" />
 
 <div class="blue-box">
-	{% for day in weather.forecast %}
-	<h6>{{ day.day }}</h6>
-	<h2>{{ day.status }}</h2>
-	{% endfor %}
+	<ul class="three-column">
+		{% for day in weather.forecast|slice:":3" %}
+		<li class="{% if forloop.last %}last-child{% endif %}">
+			<h6 class="margin-bottom">{{ day.day }}</h6>
+			<h2>{{ day.status }}</h2>
+		</li>
+		{% endfor %}
+	</ul>
 </div>
 
 {% endblock %}
