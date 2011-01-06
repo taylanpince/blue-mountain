@@ -83,21 +83,17 @@
 		);
 	//]]>
 	</script>
+	
+	<a href="http://www.bluemountain.ca" target="_blank">bluemountain.ca</a>
 </div>
 
 <div class="polls"></div>
 
 <!--Special Offers & Deals-->
 <div id="specialOffers" class="modules">
-	<h1><img src="{{ MEDIA_URL }}images/deals.jpg" alt="Deals" /></h1>
+	<h1><img src="{{ MEDIA_URL }}images/winners.jpg" /></h1>
 	<br />
-	<p>Book a ski &amp; Snowboard getaway and receive up to 40% off your lodging and lift tickets.</p>
-	<br />
-	<img src="{{ MEDIA_URL }}images/dealImage.jpg" />
-	<br /><br />
-	<p>More information on this offer can be found by </p>
-	<br />
-	<a>CLICKING HERE.</a>
+	<img src="{{ MEDIA_URL }}images/winner1.png" />
 </div>
 
 <div class="polls"></div>
@@ -149,23 +145,30 @@
 <!-- Sliding Ice jQuery Start-->
 <script type="text/javascript">
 //<![CDATA[
+	$(document).ready(function() {
+		$('#slidingIce').animate({
+			top: '280',
+		}, 2000, function() {
+			
+		});
+	});
+
 	$("*:not(#slidingIce)").live("click", function() {
 		$('#slidingIce').animate({
 			top: '-295',
-		}, 2000, function() {
+		}, 1300, function() {
 			// Animation complete.
 		});
 	});
 
-	$('#clickdown').click(function() {
+	$('#clickdown').live("click", function() {
 		$('#slidingIce').animate({
 			top: '280',
 		}, 2000, function() {
-			$("#slidingIce").stop();
+			
 		});
 	});
 //]]>
 </script>
-<!-- Sliding Ice End-->
 
 {% endblock %}

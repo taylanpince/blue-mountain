@@ -7,7 +7,10 @@
 
 <div class="spacer">
 	<div class="grid_12">
-		{% content_block "contest-entry" %}
+		<div class="thin center">
+			{% content_block "contest-entry" %}
+			<p><a href="{% url contests_photos %}" target="_blank">Get more details on the awesome prize.</a></p>
+		</div>
 	</div>
 
 	<form method="post" action="{% url contests_enter %}">
@@ -39,18 +42,13 @@
 			<div class="checkbox">
 				{% if form.agreement.errors %}<p class="errors">{{ form.agreement.errors|join:", " }}</p>{% endif %}
 				{{ form.agreement }}
-				{{ form.agreement.label }}
+				I Have Read The <a href="{% url contests_rules %}" target="_blank">Rules</a>*
 				<br />
 				{{ form.newsletter }}
 				{{ form.newsletter.label }}
 			</div>
 
 			<p><input id="sendMail" type="submit" name="enter" value="" onclick="closeForm()" /></p>
-
-			<p>
-				<a name="fb_share"></a> 
-				<script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
-			</p>
 		</fieldset>
 	</form>
 		

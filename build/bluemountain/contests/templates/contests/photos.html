@@ -3,6 +3,8 @@
 {% load thumbnail %}
 {% load content_block_tags %}
 
+{% block class %}prizes{% endblock %}
+
 {% block css %}
 {{ block.super }}
 
@@ -13,7 +15,6 @@
 
 {% block js %}
 {{ block.super }}
-<script type="text/javascript" src="{{ MEDIA_URL }}js/paginate.js"></script>
 <script type="text/javascript" src="{{ MEDIA_URL }}js/shadowbox/shadowbox.js"></script>
 {% endblock %}
 
@@ -21,16 +22,12 @@
 
 <div class="spacer">
 	<div class="grid_12">
-		{% content_block "contest-photos" %}
+		<div id="CopyContent" class="thin">
+			{% content_block "contest-photos" %}
+		</div>
 	</div>
 	<div class="spacer">&nbsp;</div>
 	<div class="grid_12">
-		<!-- the input fields that will hold the variables we will use -->
-		<input type="hidden" id="current_page" />
-		<input type="hidden" id="show_per_page" />
-
-		<!-- Content div. The child elements will be used for paginating(they don't have to be all the same,
-			you can use divs, paragraphs, spans, or whatever you like mixed together). '-->
 		<div id="photos">
 			{% for photo in photos %}
 			{% thumbnail photo.image "120x90" as image %}
@@ -38,9 +35,6 @@
 			{% endthumbnail %}
 			{% endfor %}
 		</div>
-
-		<!-- An empty div which will be populated using jQuery -->
-		<div id="page_navigation"></div>
 	</div>
 </div>
 

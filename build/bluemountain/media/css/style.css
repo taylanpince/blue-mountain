@@ -400,6 +400,14 @@ body.thanks #CopyContent p {
     margin: auto auto 30px auto;
 }
 
+body.prizes #CopyContent h2 {
+    margin-bottom: 20px;
+}
+
+body.prizes #CopyContent ul {
+    margin-bottom: 15px;
+}
+
 p.center {
     text-align: center;
 }
