@@ -146,6 +146,7 @@ a.send-text {
     height: 48px;
     display: block;
     color: transparent;
+    margin-bottom: 15px;
     background: transparent url("../images/mobile/btn-send-text.png") 50% 50% no-repeat;
 }
 

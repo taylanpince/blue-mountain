@@ -430,3 +430,8 @@ a.twtr-join-conv {
 a.small {
     font-size: 14px;
 }
+
+.center li {
+    text-align: center;
+    list-style-position: inside;
+}
