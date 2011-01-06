@@ -38,10 +38,13 @@ h1{
 text-align:center;
 font-size:50px;
 color:#11c3f6;
+padding-bottom:5px;
 }
 h2{
 text-align:center;
 font-size:35px;
+padding-bottom:5px;
+
 color:#11c3f6;
 }
 h3{
@@ -225,7 +228,7 @@ height:432px;
 #footerContent{
 width:960px;
 position:absolute;
-height:177px;
+height:142px !important;
 bottom:0;
 left:50%;
 margin-left:-480px;
