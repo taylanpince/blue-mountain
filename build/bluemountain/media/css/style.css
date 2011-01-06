@@ -357,6 +357,10 @@ div.checkbox input {
     width: 20px;
 }
 
+div.thin input {
+    width: 530px;
+}
+
 p.errors {
     color: #db5c4f;
     margin-bottom: 2px;

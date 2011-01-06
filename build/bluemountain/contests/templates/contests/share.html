@@ -6,20 +6,28 @@
 {% block content %}
 
 <div class="spacer">
-	<div class="grid_12">
-		{% content_block "contest-share" %}
-	</div>
-	<div class="grid_12">
-		{{ formset.non_form_errors }}
-
-		<form method="post" action="{% url contests_share %}">
-			{% csrf_token %}
-			{{ formset.management_form }}
-			{% for form in formset.forms %}
-			{{ form.as_p }}
-			{% endfor %}
-			<p><input type="submit" value="Send" /></p>
-		</form>
+	<div class="grid_12 center">
+			<div class="thin">
+				{% content_block "contest-share" %}
+				
+				<fieldset>
+					<div class="spacer">
+						{{ formset.non_form_errors }}
+					
+						<form method="post" action="{% url contests_share %}">
+							{% csrf_token %}
+							{{ formset.management_form }}
+							{% for form in formset.forms %}
+							{% if form.email.errors %}<p class="errors">{{ form.email.errors|join:", " }}</p>{% endif %}
+							{{ form.email.label_tag }}<br />
+							{{ form.email }}<br />
+							{% endfor %}
+							<p><input id="sendFriends" type="submit" name="enter" value="" /></p>
+						</form>
+					</div>
+				</fieldset>
+			</div>
+		</div>
 	</div>
 </div>
 
