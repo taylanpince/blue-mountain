@@ -17,6 +17,7 @@ from content_blocks.models import Photo
 
 
 CONTEST_COOKIE_KEY = "BLUEMOUNTAIN_CONTEST"
+CONTEST_FIRST_NAME_KEY = "BLUEMOUNTAIN_CONTEST_FIRST_NAME"
 
 
 def enter(request):
@@ -54,6 +55,7 @@ def enter(request):
             expiry = datetime.strftime(contest.end_date, "%a, %d-%b-%Y %H:%M:%S GMT")
 
             response.set_cookie(CONTEST_COOKIE_KEY, value="True", max_age=max_age, expires=expiry)
+            response.set_cookie(CONTEST_FIRST_NAME_KEY, value=form.cleaned_data.get("first_name"), max_age=max_age, expires=expiry)
 
             return response
     else:
@@ -82,8 +84,14 @@ def share(request):
                 if email:
                     emails.append(email)
 
-            send_mail(_("Enter Blue Mountain's Contest and Win!"), render_to_string("contests/share.txt", {
+            if request.COOKIES.has_key(CONTEST_FIRST_NAME_KEY):
+                name = request.COOKIES.get(CONTEST_FIRST_NAME_KEY)
+            else:
+                name = u"Someone"
+
+            send_mail("%s wants you to ride the Blue Mountain Blue Bird" % name, render_to_string("contests/share.txt", {
                 "site": Site.objects.get_current(),
+                "name": name,
             }), settings.DEFAULT_FROM_EMAIL, emails)
 
             return HttpResponseRedirect(reverse("contests_thanks"))
