@@ -25,5 +25,5 @@ class Command(BaseCommand):
                 "date": deal.find("date").text,
                 "price": deal.find("price").text,
             })
-        print deals
+
         cache.set(DEALS_CACHE_KEY, deals, 7 * 24 * 60 * 60)
