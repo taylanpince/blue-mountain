@@ -330,6 +330,12 @@ h1.conditions {
     background: transparent url("../images/mobile/header-conditions.png") 50% 50% no-repeat;
 }
 
+h1.deals {
+    height: 13px;
+    color: transparent;
+    background: transparent url("../images/mobile/header-deals.png") 50% 50% no-repeat;
+}
+
 h2.contest-thanks {
     height: 21px;
     color: transparent;
@@ -678,6 +684,11 @@ ul.rounded-buttons li a.conditions-trail {
     h1.conditions {
         background-size: 303px 9px;
         background-image: url("../images/mobile/header-conditions@2x.png");
+    }
+    
+    h1.deals {
+        background-size: 303px 13px;
+        background-image: url("../images/mobile/header-deals@2x.png");
     }
     
     h2.contest-thanks {

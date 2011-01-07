@@ -20,6 +20,9 @@ urlpatterns = patterns('',
     
     # Conditions
     (r'^conditions/', include('conditions.urls')),
+    
+    # Deals
+    (r'^deals/', include('deals.urls')),
 )
 
 urlpatterns += patterns('django.views.generic.simple',

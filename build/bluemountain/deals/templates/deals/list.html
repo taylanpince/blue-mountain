@@ -1,0 +1,21 @@
+{% extends "mobile/sub.html" %}
+
+
+{% block content %}
+
+<h1 class="deals">Deals</h1>
+
+{% for deal in deals %}
+<div class="blue-box {% if not forloop.last %}margin-bottom{% endif %}">
+	<h4>{{ deal.title }}</h4>
+	<p>
+		{{ deal.date }}<br />
+		${{ deal.price }}
+	</p>
+	<p class="no-margin">{{ deal.description }}</p>
+</div>
+{% endfor %}
+
+<hr class="no-margin" />
+
+{% endblock %}

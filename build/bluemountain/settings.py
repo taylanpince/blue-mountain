@@ -77,6 +77,7 @@ INSTALLED_APPS = (
     'contact',
     'content_blocks',
     'contests',
+    'deals',
     'events',
 )
 
