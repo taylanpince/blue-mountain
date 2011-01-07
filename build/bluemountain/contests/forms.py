@@ -1,6 +1,7 @@
 from django import forms
 from django.utils.translation import ugettext_lazy as _
 
+from contests.fields import EmailInput, PhoneInput
 from contests.models import ContestEntry
 
 
@@ -13,11 +14,16 @@ class ContestEntryForm(forms.ModelForm):
 
         super(ContestEntryForm, self).__init__(*args, **kwargs)
 
+        self.fields.get("first_name").widget = forms.TextInput(attrs={"tabindex": "1"})
+        self.fields.get("last_name").widget = forms.TextInput(attrs={"tabindex": "2"})
         self.fields.get("newsletter").label = _("Yes, please send me Blue Mountain deals and updates")
         self.fields.get("birth_date").label = _("Birth Date (YYYY-MM-DD)")
+        self.fields.get("birth_date").widget = forms.TextInput(attrs={"tabindex": "3"})
         self.fields.get("phone_number").label = _("Phone (123-123-1234)")
+        self.fields.get("phone_number").widget = PhoneInput(attrs={"tabindex": "4"})
+        self.fields.get("email").widget = EmailInput(attrs={"tabindex": "5"})
 
-    email_confirm = forms.EmailField(label=_("Confirm Email Address"))
+    email_confirm = forms.EmailField(label=_("Confirm Email Address"), widget=EmailInput(attrs={"tabindex": "6"}))
     agreement = forms.BooleanField(label=_("I Have Read The Rules*"))
 
     class Meta:
@@ -49,7 +55,7 @@ class EmailForm(forms.Form):
     """
     A form with a single email field
     """
-    email = forms.EmailField(_("Email"))
+    email = forms.EmailField(_("Email"), widget=EmailInput())
 
 
 class ValidatingFormSet(forms.formsets.BaseFormSet):
