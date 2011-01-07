@@ -86,6 +86,18 @@ div.blue-box {
     background-color: rgba(45, 79, 101, 0.7);
 }
 
+div.blue-box a,
+div.blue-box a:link,
+div.blue-box a:visited,
+div.blue-box a:active {
+    color: #fff;
+    text-decoration: underline;
+}
+
+div.blue-box a:hover {
+    text-decoration: none;
+}
+
 div.two-column {
     -webkit-column-count: 2;
     -webkit-column-gap: 20px;
@@ -93,6 +105,14 @@ div.two-column {
 
 div.center {
     text-align: center;
+}
+
+div.no-p-margin p {
+    margin: 0px;
+}
+
+div.margin-bottom {
+    margin-bottom: 10px;
 }
 
 /* @end */
@@ -148,6 +168,14 @@ a.send-text {
     color: transparent;
     margin-bottom: 15px;
     background: transparent url("../images/mobile/btn-send-text.png") 50% 50% no-repeat;
+}
+
+a.download-map {
+    height: 28px;
+    display: block;
+    color: transparent;
+    margin-bottom: 10px;
+    background: transparent url("../images/mobile/btn-download-trail-map.png") 50% 50% no-repeat;
 }
 
 ul.no-bullet li {
@@ -207,7 +235,7 @@ li.weather-rain,
 li.weather-windy {
     height: 150px;
     background-repeat: no-repeat;
-    background-position: 50% 50%;
+    background-position: 40% 50%;
 }
 
 li.weather-sunny {
@@ -314,6 +342,13 @@ h2.facebook {
     background: transparent url("../images/mobile/header-facebook.png") 50% 50% no-repeat;
 }
 
+h6.enter-here {
+    height: 6px;
+    margin-bottom: 4px;
+    color: transparent;
+    background: transparent url("../images/mobile/header-enter-here.png") 50% 50% no-repeat;
+}
+
 h3,
 h4,
 h5,
@@ -325,6 +360,11 @@ h3 {
     font-size: 14px;
     font-weight: bold;
     margin-bottom: 4px;
+}
+
+h3.center {
+    margin-top: 8px;
+    text-align: center;
 }
 
 h4 {
@@ -555,7 +595,7 @@ ul.rounded-buttons li a.conditions-live {
 }
 
 ul.rounded-buttons li a.conditions-trail {
-    background-image: url("../images/mobile/btn-trail-map.png");
+    background-image: url("../images/mobile/btn-live-conditions.png");
 }
 
 /* @end */
@@ -593,6 +633,11 @@ ul.rounded-buttons li a.conditions-trail {
     a.send-text {
         background-size: 176px 48px;
         background-image: url("../images/mobile/btn-send-text@2x.png");
+    }
+    
+    a.download-map {
+        background-size: 124px 28px;
+        background-image: url("../images/mobile/btn-download-trail-map@2x.png");
     }
     
     input.submit {
@@ -643,6 +688,11 @@ ul.rounded-buttons li a.conditions-trail {
     h2.facebook {
         background-size: 282px 39px;
         background-image: url("../images/mobile/header-facebook@2x.png");
+    }
+    
+    h6.enter-here {
+        background-size: 53px 6px;
+        background-image: url("../images/mobile/header-enter-here@2x.png");
     }
     
     ul.rounded-buttons li {
@@ -707,7 +757,7 @@ ul.rounded-buttons li a.conditions-trail {
 
     ul.rounded-buttons li a.conditions-trail {
         background-size: 52px 12px;
-        background-image: url("../images/mobile/btn-trail-map@2x.png");
+        background-image: url("../images/mobile/btn-live-conditions@2x.png");
     }
 
     li.weather-sunny,

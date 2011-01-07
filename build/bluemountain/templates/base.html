@@ -10,7 +10,7 @@
 	@import "{{ MEDIA_URL }}css/style.css";
 </style>
 
-<!--[if IE]>
+<!--[if IE7]>
 	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/styleie7.css" />
 <![endif]-->
 {% endblock %}
@@ -65,7 +65,7 @@
 </div><!-- Parallax End -->
 {% endblock %}
 
-<div id="content" class="container_12">
+<div id="content" class="container_12" style="{% block content_style %}{% endblock %}">
 	<!--White Background Around Content-->
 	<div id="white"></div>
 
