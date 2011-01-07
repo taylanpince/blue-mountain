@@ -79,6 +79,17 @@ div.white-box {
     background: transparent -webkit-gradient(linear, 0% 50%, 100% 50%, from(#FFF), to(#EDEDED)) top left no-repeat;
 }
 
+div.white-box a,
+div.white-box a:link,
+div.white-box a:visited,
+div.white-box a:active {
+    text-decoration: underline;
+}
+
+div.white-box a:hover {
+    text-decoration: none;
+}
+
 div.blue-box {
     color: #fff;
     padding: 10px;

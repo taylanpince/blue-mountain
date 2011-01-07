@@ -440,3 +440,25 @@ a.small {
     overflow: hidden;
     width: 550px;
 }
+
+table {
+    margin-bottom: 10px;
+    border-collapse: collapse;
+}
+
+td,
+th {
+    font-size: 11px;
+    padding: 4px;
+    vertical-align: middle;
+    border: 1px solid #999;
+}
+
+th.center,
+td.center {
+    text-align: center;
+}
+
+thead th {
+    background-color: #b0b7bc;
+}
