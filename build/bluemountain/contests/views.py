@@ -89,7 +89,7 @@ def share(request):
             else:
                 name = u"Someone"
 
-            send_mail("%s wants you to ride the Blue Mountain Blue Bird" % name, render_to_string("contests/share.txt", {
+            send_mail("Chopper to the top of Blue Mountain with %s" % name, render_to_string("contests/share.txt", {
                 "site": Site.objects.get_current(),
                 "name": name,
             }), settings.DEFAULT_FROM_EMAIL, emails)

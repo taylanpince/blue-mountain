@@ -1,7 +1,6 @@
+The Blue Mountain Blue Bird Contest.
 You. 3 friends. 1 helicopter. Blue Mountain.
 
-Hey,
-
-{{ name }} thinks you’d make an awesome wingperson for the most epic weekend of all time. The Blue Mountain Blue Bird Contest. Win it, and you and 3 friends will be choppered to the top of Blue Mountain for a weekend on the slopes. Is your helicopter standing by?
+{{ name }} knows you’d make an awesome wingperson for the most epic weekend of all time. The Blue Mountain Blue Bird Contest. Win it, and you and 3 friends will be choppered to the top of Blue Mountain for a wicked weekend on the slopes. Is your helicopter standing by?
 
 http://{{ site.domain }}/contest/
