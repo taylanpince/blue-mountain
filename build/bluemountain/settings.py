@@ -69,7 +69,7 @@ INSTALLED_APPS = (
     'django.contrib.markup',
 
     'django_extensions',
-    'django_mobile',
+    #'django_mobile',
     'sorl.thumbnail',
     'south',
 
