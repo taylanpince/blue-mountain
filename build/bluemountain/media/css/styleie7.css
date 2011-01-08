@@ -1,12 +1,13 @@
-#white
-{
-margin-left:-960px;
+#white {
+    margin-left:-960px;
 }
-#snowForm, #contactFormContainer
-{
-margin-left:-860px;
+
+#snowForm,
+#contactFormContainer {
+    margin-left:-860px;
 }
-#slidingIce{
-	left:30%;
-	top:295px;
+
+#slidingIce {
+    left: 30% !important;
+    top: 295px !important;
 }
