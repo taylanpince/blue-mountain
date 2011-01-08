@@ -126,13 +126,9 @@ def winners(request):
 
 def photos(request):
     """
-    Renders photos
+    Redirects to prizes
     """
-    photos = Photo.objects.all()
-
-    return render_to_response("contests/photos.html", {
-        "photos": photos,
-    }, context_instance=RequestContext(request))
+    return HttpResponseRedirect(reverse("contests_prizes"))
 
 
 def thanks(request):
@@ -148,7 +144,8 @@ def prizes(request):
     """
     Renders prizes page
     """
+    photos = Photo.objects.all()
+
     return render_to_response("contests/prizes.html", {
-
+        "photos": photos,
     }, context_instance=RequestContext(request))
-
