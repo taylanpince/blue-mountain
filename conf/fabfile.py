@@ -2,7 +2,7 @@ from fabric.api import *
 from fabric.contrib.console import confirm
 
 
-env.root_dir = "/home/bluemountainteam/sites/blue-mountain"
+env.root_dir = "/home/bluemountainteam/sites/blue-mountain-production"
 env.project_dir = "%s/src/blue-mountain" % env.root_dir
 env.user = "bluemountainteam"
 env.hosts = [
