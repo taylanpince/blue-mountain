@@ -5,6 +5,7 @@
 <head>
 	
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="You. 3 friends. 1 helicopter. The Blue Mountain Blue Bird Contest. How can you not enter? So enter!" />
 	
 	{% block meta %}{% endblock %}
 	
@@ -19,6 +20,8 @@
 		@import "{{ MEDIA_URL }}css/reset.css";
 		@import "{{ MEDIA_URL }}css/screen.css";
 	</style>
+	
+	
 	
 	{% block css %}{% endblock %}
 	
@@ -78,7 +81,9 @@
 	
 	{% block extra_js %}{% endblock %}
 	
-	<img src="http://r.casalemedia.com/j.gif?u=136198&s=1" width="1" height="1" alt="" />
+	{% block tracking_pixel %}
+	<img src="http://r.casalemedia.com/j.gif?u=136198&s=2" width="1" height="1" alt="" />
+	{% endblock %}
 
 </body>
 </html>
