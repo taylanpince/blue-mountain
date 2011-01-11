@@ -17,13 +17,16 @@
 {% block header %}
 
 <div id="slidingIce">
-	<div style="width:25px;height:27px;position:absolute;right:-28px;top:37px"></div>
-	<a href="/contest/">
-		<div id="enterBtn" style="width:595px;height:165px;position:absolute;right:-28px;top:137px;"></div>
-	</a>
 	<img src="{{ MEDIA_URL }}images/iceblock.png"/>
+	<a href="{% url contests_enter %}">
+		<div id="enterBtn" style="width:595px;height:215px;position:absolute;right:-28px;top:87px;">
+			<img src="{{ MEDIA_URL }}images/blank_enterlink.png"/>
+		</div>
+	</a>
+	<div id="clickdown" style="width:595px;height:67px;position:absolute;right:-61px;top:302px;">
+		<img src="{{ MEDIA_URL }}images/blank_clickdown.png"/>
+	</div>
 </div>
-<div id="clickdown"></div>
 
 {% next_contest as flight %}
 
@@ -148,14 +151,14 @@
 //<![CDATA[
 	$(document).ready(function() {
 		$('#slidingIce').animate({
-			top: '280',
-		}, 2000, function() {
-			
-		});
+				top: '280',
+			}, 2000, function() {
+				// Animation complete.
+			});
 	});
 
-	$("*:not(#slidingIce)").live("click", function() {
-		$('#slidingIce').animate({
+	$("*:not(#enterBtn,#clickdown)").live("click", function() {
+		$('#slidingIce').stop(true, true).animate({
 			top: '-295',
 		}, 1300, function() {
 			// Animation complete.
@@ -163,10 +166,10 @@
 	});
 
 	$('#clickdown').live("click", function() {
-		$('#slidingIce').animate({
+		$('#slidingIce').stop(true, true).animate({
 			top: '280',
 		}, 2000, function() {
-			
+			// Animation complete.
 		});
 	});
 //]]>
