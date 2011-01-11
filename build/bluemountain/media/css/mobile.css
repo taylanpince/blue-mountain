@@ -329,6 +329,12 @@ h1.contest {
     background: transparent url("../images/mobile/header-contest.png") 50% 50% no-repeat;
 }
 
+h1.contest {
+    height: 32px;
+    color: transparent;
+    background: transparent url("../images/mobile/header-prizes.png") 50% 50% no-repeat;
+}
+
 h1.contest-rules {
     height: 9px;
     color: transparent;
@@ -685,6 +691,11 @@ ul.rounded-buttons li a.conditions-trail {
     h1.contest {
         background-size: 303px 32px;
         background-image: url("../images/mobile/header-contest@2x.png");
+    }
+    
+    h1.prizes {
+        background-size: 303px 32px;
+        background-image: url("../images/mobile/header-prizes@2x.png");
     }
     
     h1.contest-rules {
