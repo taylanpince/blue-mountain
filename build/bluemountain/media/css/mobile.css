@@ -800,10 +800,11 @@ ul.rounded-buttons li a.conditions-trail {
     }
 
     ul.rounded-buttons li a.conditions-trail {
-        background-size: 52px 12px;
+        background-size: 85px 9px;
         background-image: url("../images/mobile/btn-live-conditions@2x.png");
     }
 
+    li.weather-cloudy,
     li.weather-sunny,
     li.weather-rainy,
     li.weather-snow-showers,
