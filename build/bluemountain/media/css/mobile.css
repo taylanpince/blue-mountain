@@ -51,6 +51,23 @@ hr.negative-margin {
     margin: 5px 0px 15px 0px;
 }
 
+#Footer {
+    height: 20px;
+    overflow: hidden;
+    margin: 0px auto 0px auto;
+    position: relative;
+}
+
+#ShareBox {
+    position: absolute;
+    top: 0px;
+    left: 10px;
+}
+
+#Versions {
+    width: 290px;
+}
+
 #Versions li a {
     font-size: 11px;
     text-decoration: none;

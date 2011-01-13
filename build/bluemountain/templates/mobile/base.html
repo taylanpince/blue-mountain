@@ -19,3 +19,15 @@
 {% endblock %}
 
 {% block footer %}{% endblock %}
+
+{% block versions %}
+<div id="Footer">
+	<div class="addthis_default_style" id="ShareBox">
+		<a class="addthis_button_compact"></a>
+	</div>
+
+	<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=xa-4d24a4f12bfa245e"></script>
+	
+	{{ block.super }}
+</div>
+{% endblock %}

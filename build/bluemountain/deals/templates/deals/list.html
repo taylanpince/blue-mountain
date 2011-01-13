@@ -6,14 +6,16 @@
 <h1 class="deals">Deals</h1>
 
 {% for deal in deals %}
+{% if deal.title %}
 <div class="blue-box {% if not forloop.last %}margin-bottom{% endif %}">
 	<h4>{{ deal.title }}</h4>
 	<p>
 		{{ deal.date }}<br />
-		${{ deal.price }}
+		{{ deal.price }}
 	</p>
 	<p class="no-margin">{{ deal.description }}</p>
 </div>
+{% endif %}
 {% endfor %}
 
 <hr class="no-margin" />
