@@ -48,15 +48,15 @@ def restart(path):
     """
     Restart Apache process gracefully
     """
-    run('touch %s/%s/%s/conf/bluemountain.wsgi' % env.root_dir, path, env.project_dir)
+    run('touch %s/%s/%s/conf/bluemountain.wsgi' % (env.root_dir, path, env.project_dir))
 
-def update_pip():
+def update_pip(path):
     """
     Update pip requirements
     """
     virtualenv_run('pip install -E %s/%s -r %s/%s/%s/conf/requirements.pip' % (env.root_dir, path, env.root_dir, path, env.project_dir), path)
 
-def syncdb():
+def syncdb(path):
     """
     Run syncdb and apply south migrations
     """
