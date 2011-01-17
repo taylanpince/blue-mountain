@@ -2,57 +2,71 @@ from fabric.api import *
 from fabric.contrib.console import confirm
 
 
-env.root_dir = "/home/bluemountainteam/sites/blue-mountain-production"
-env.project_dir = "%s/src/blue-mountain" % env.root_dir
+env.staging_path = "blue-mountain"
+env.production_path = "blue-mountain-production"
+env.root_dir = "/home/bluemountainteam/sites"
+env.project_dir = "src/blue-mountain"
 env.user = "bluemountainteam"
 env.hosts = [
     "184.106.172.234",
 ]
 
-def deploy():
+def deploy_staging():
+    """
+    Deploy staging site
+    """
+    deploy(env.staging_path)
+
+def deploy_production():
+    """
+    Deploy production site
+    """
+    deploy(env.production_path)
+
+def deploy(path):
     """
     Deploy the latest version
     """
-    update()
-    update_pip()
-    syncdb()
-    restart()
+    update(path)
+    update_pip(path)
+    syncdb(path)
+    restart(path)
 
-def update():
+def update(path):
     """
     Updates project source
     """
-    run('cd %s; git pull' % env.project_dir)
+    run('cd %s/%s/%s; git pull' % (env.root_dir, path, env.project_dir))
 
-def version():
+def version(path):
     """
     Show last commit to repo on server
     """
-    run('cd %s; git log -1' % env.project_dir)
+    run('cd %s/%s/%s; git log -1' % (env.root_dir, path, env.project_dir))
 
-def restart():
+def restart(path):
     """
     Restart Apache process gracefully
     """
-    run('touch %s/conf/bluemountain.wsgi' % env.project_dir)
+    run('touch %s/%s/%s/conf/bluemountain.wsgi' % env.root_dir, path, env.project_dir)
 
 def update_pip():
     """
     Update pip requirements
     """
-    virtualenv_run('pip install -E %s -r %s/conf/requirements.pip' % (env.root_dir, env.project_dir))
+    virtualenv_run('pip install -E %s/%s -r %s/%s/%s/conf/requirements.pip' % (env.root_dir, path, env.root_dir, path, env.project_dir), path)
 
 def syncdb():
     """
     Run syncdb and apply south migrations
     """
-    virtualenv_run('manage.py syncdb')
-    virtualenv_run('manage.py migrate')
+    virtualenv_run('manage.py syncdb', path)
+    virtualenv_run('manage.py migrate', path)
 
-def virtualenv_run(cmd):
+def virtualenv_run(cmd, path):
     """
     Runs a command using the virtualenv environment
     """
     require('root_dir')
 
-    return run('source %s/bin/activate; %s' % (env.root_dir, cmd))
+    return run('source %s/%s/bin/activate; %s' % (env.root_dir, path, cmd))
