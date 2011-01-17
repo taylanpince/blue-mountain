@@ -23,7 +23,7 @@ def export_csv(modeladmin, request, queryset):
 
     # Write data rows
     for obj in queryset:
-        writer.writerow([getattr(obj, field) for field in field_names])
+        writer.writerow([unicode(getattr(obj, field)).encode("utf-8") for field in field_names])
 
     return response
 
