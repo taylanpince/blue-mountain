@@ -2,6 +2,8 @@ from django.contrib.localflavor.us.models import PhoneNumberField
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
+from contests.choices import SOURCE_UNKNOWN, SOURCE_CHOICES
+
 
 class Contest(models.Model):
     """
@@ -31,6 +33,7 @@ class ContestEntry(models.Model):
     phone_number = PhoneNumberField(_("Phone Number"))
     entry_date = models.DateTimeField(_("Entry Date"), auto_now_add=True)
     newsletter = models.BooleanField(_("Newsletter Subscription"), default=False)
+    source = models.PositiveSmallIntegerField(_("Source"), choices=SOURCE_CHOICES, default=SOURCE_UNKNOWN)
 
     @property
     def full_name(self):

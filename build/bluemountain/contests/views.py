@@ -11,6 +11,9 @@ from django.template import RequestContext
 from django.template.loader import render_to_string
 from django.utils.translation import ugettext_lazy as _
 
+from django_mobile import get_flavour
+
+from contests.choices import SOURCE_DESKTOP, SOURCE_MOBILE
 from contests.forms import ContestEntryForm, EmailForm, ValidatingFormSet
 from contests.models import Contest, ContestEntry, ContestWinner
 from content_blocks.models import Photo
@@ -47,6 +50,12 @@ def enter(request):
         if form.is_valid():
             contest_entry = form.save(commit=False)
             contest_entry.contest = contest
+
+            if get_flavour(request=request) == u"mobile":
+                contest_entry.source = SOURCE_MOBILE
+            else:
+                contest_entry.source = SOURCE_DESKTOP
+
             contest_entry.save()
 
             response = HttpResponseRedirect(reverse("contests_share"))

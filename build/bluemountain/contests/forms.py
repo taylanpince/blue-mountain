@@ -28,7 +28,7 @@ class ContestEntryForm(forms.ModelForm):
 
     class Meta:
         model = ContestEntry
-        exclude = ("contest", "entry_date")
+        exclude = ("contest", "entry_date", "source")
 
     def clean(self):
         self.cleaned_data = super(ContestEntryForm, self).clean()

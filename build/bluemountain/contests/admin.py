@@ -13,8 +13,8 @@ class ContestAdmin(admin.ModelAdmin):
 
 
 class ContestEntryAdmin(admin.ModelAdmin):
-    list_display = ("full_name", "contest", "email", "entry_date", "newsletter")
-    list_filter = ("contest", "newsletter")
+    list_display = ("full_name", "contest", "email", "entry_date", "newsletter", "source")
+    list_filter = ("contest", "newsletter", "source")
     actions = [export_csv]
 
     save_on_top = True

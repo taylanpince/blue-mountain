@@ -378,7 +378,7 @@ h1.deals {
 }
 
 h2.contest-thanks {
-    height: 21px;
+    height: 16px;
     color: transparent;
     background: transparent url("../images/mobile/header-thanks.png") 50% 50% no-repeat;
 }
@@ -743,7 +743,7 @@ ul.rounded-buttons li a.conditions-trail {
     }
     
     h2.contest-thanks {
-        background-size: 222px 21px;
+        background-size: 81px 16px;
         background-image: url("../images/mobile/header-thanks@2x.png");
     }
     
