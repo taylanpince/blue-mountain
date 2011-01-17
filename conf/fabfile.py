@@ -15,22 +15,22 @@ def deploy_staging():
     """
     Deploy staging site
     """
-    deploy(env.staging_path)
+    deploy(env.staging_path, "staging")
 
 def deploy_production():
     """
     Deploy production site
     """
-    deploy(env.production_path)
+    deploy(env.production_path, "production")
 
-def deploy(path):
+def deploy(path, version):
     """
     Deploy the latest version
     """
     update(path)
     update_pip(path)
     syncdb(path)
-    restart(path)
+    restart(path, version)
 
 def update(path):
     """
@@ -44,11 +44,11 @@ def version(path):
     """
     run('cd %s/%s/%s; git log -1' % (env.root_dir, path, env.project_dir))
 
-def restart(path):
+def restart(path, version):
     """
     Restart Apache process gracefully
     """
-    run('touch %s/%s/%s/conf/bluemountain.wsgi' % (env.root_dir, path, env.project_dir))
+    run('touch %s/%s/%s/conf/bluemountain_%s.wsgi' % (env.root_dir, path, env.project_dir, version))
 
 def update_pip(path):
     """
