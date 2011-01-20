@@ -5,7 +5,7 @@ from contests.models import Contest, ContestEntry, ContestWinner
 
 
 class ContestAdmin(admin.ModelAdmin):
-    list_display = ("title", "start_date", "end_date")
+    list_display = ("title", "start_date", "end_date", "flight_date")
     search_fields = ("title",)
 
     save_on_top = True

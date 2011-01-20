@@ -17,8 +17,8 @@ def contest_countdown():
     """
     try:
         contest = Contest.objects.filter(
-            start_date__gt=datetime.now(),
-        ).order_by("start_date")[0]
+            flight_date__gt=datetime.now(),
+        ).order_by("flight_date")[0]
     except IndexError:
         contest = None
 
@@ -50,8 +50,8 @@ class NextContestNode(template.Node):
     def render(self, context):
         try:
             contest = Contest.objects.filter(
-                start_date__gt=datetime.now(),
-            ).order_by("start_date")[0]
+                flight_date__gt=datetime.now(),
+            ).order_by("flight_date")[0]
         except IndexError:
             contest = None
 

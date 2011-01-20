@@ -12,6 +12,7 @@ class Contest(models.Model):
     title = models.CharField(_("Title"), max_length=255)
     start_date = models.DateTimeField(_("Start Date"))
     end_date = models.DateTimeField(_("End Date"))
+    flight_date = models.DateTimeField(_("Flight Date"), blank=True, null=True)
 
     class Meta:
         verbose_name = _("Contest")
