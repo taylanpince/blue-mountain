@@ -228,7 +228,7 @@ height:432px;
 #footerContent{
 width:960px;
 position:absolute;
-height:142px !important;
+height:185px !important;
 bottom:0;
 left:50%;
 margin-left:-480px;
@@ -383,8 +383,7 @@ fieldset {
 }
 
 #footerContent {
-    height: 184px;
-    bottom: 68px;
+    bottom: 17px;
 }
 
 #ContactForm label {
