@@ -17,6 +17,7 @@ class Contest(models.Model):
     class Meta:
         verbose_name = _("Contest")
         verbose_name_plural = _("Contests")
+        ordering = ["start_date"]
 
     def __unicode__(self):
         return self.title

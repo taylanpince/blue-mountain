@@ -3,11 +3,38 @@ import re
 from datetime import datetime, timedelta
 
 from django import template
+from django.conf import settings
 
-from contests.models import Contest
+from contests.models import Contest, ContestWinner
 
 
 register = template.Library()
+
+
+@register.inclusion_tag("contests/winner.html")
+def last_weeks_winner():
+    """
+    Renders last week's winner's photo
+    """
+    try:
+        contest = Contest.objects.filter(
+            end_date__lt=datetime.now(),
+        ).order_by("-end_date")[0]
+    except IndexError:
+        contest = None
+
+    if contest:
+        try:
+            winner = contest.winners.all()[0]
+        except IndexError:
+            winner = None
+    else:
+        winner = None
+
+    return {
+        "winner": winner,
+        "MEDIA_URL": settings.MEDIA_URL,
+    }
 
 
 @register.inclusion_tag("contests/countdown.html")

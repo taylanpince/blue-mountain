@@ -1,0 +1,9 @@
+{% load thumbnail %}
+
+{% if winner %}
+{% thumbnail winner.photo "222x217" upscale=True crop="center" as photo %}
+<img src="{{ photo.url }}" alt="{{ winner.name }}" />
+{% endthumbnail %}
+{% else %}
+<img src="{{ MEDIA_URL }}images/winner1.png" />
+{% endif %}

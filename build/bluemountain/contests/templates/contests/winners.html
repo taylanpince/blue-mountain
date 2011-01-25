@@ -18,8 +18,8 @@
 		<div id="winners" class="spacer">
 			{% for contest in contests %}
 				{% for winner in contest.winners.all %}
-				{% thumbnail winner.photo "125x90" as photo %}
-				<img src="photo.url" alt="{{ winner.name }}" />
+				{% thumbnail winner.photo "222x217" upscale=True crop="center" as photo %}
+				<img src="{{ photo.url }}" alt="{{ winner.name }}" />
 				{% endthumbnail %}
 				{% empty %}
 				<img src="{{ MEDIA_URL }}images/winner{{ forloop.counter }}.png" alt="{{ contest.title }}" />

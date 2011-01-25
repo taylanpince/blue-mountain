@@ -125,11 +125,11 @@ def winners(request):
     """
     Renders a list of winners, separated by contest
     """
-    winners = ContestWinner.objects.order_by("-contest__start_date")
+    winners = ContestWinner.objects.order_by("contest__start_date")
 
     return render_to_response("contests/winners.html", {
         "winners": winners,
-        "contests": Contest.objects.all(),
+        "contests": Contest.objects.order_by("start_date"),
     }, context_instance=RequestContext(request))
 
 

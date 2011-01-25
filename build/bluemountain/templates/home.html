@@ -97,7 +97,7 @@
 <div id="specialOffers" class="modules">
 	<h1><a href="{% url contests_winners %}"><img src="{{ MEDIA_URL }}images/winners.jpg" /></a></h1>
 	<br />
-	<img src="{{ MEDIA_URL }}images/winner1.png" />
+	{% last_weeks_winner %}
 </div>
 
 <div class="polls"></div>
