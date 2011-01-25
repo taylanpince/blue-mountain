@@ -16,20 +16,22 @@ def last_weeks_winner():
     """
     Renders last week's winner's photo
     """
-    try:
-        contest = Contest.objects.filter(
-            end_date__lt=datetime.now(),
-        ).order_by("-end_date")[0]
-    except IndexError:
-        contest = None
+    contests = Contest.objects.filter(
+        flight_date__isnull=False,
+        flight_date__lte=datetime.now(),
+    ).order_by("-flight_date")
 
-    if contest:
-        try:
-            winner = contest.winners.all()[0]
-        except IndexError:
-            winner = None
-    else:
-        winner = None
+    winner = None
+
+    if contests:
+        for contest in contests:
+            try:
+                winner = contest.winners.all()[0]
+            except IndexError:
+                pass
+
+            if winner is not None:
+                break
 
     return {
         "winner": winner,
