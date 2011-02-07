@@ -30,9 +30,12 @@
 	<div class="grid_12">
 		<div id="photos">
 			{% for photo in photos %}
-			{% thumbnail photo.image "90x90" crop="center" as image %}
-			<a href="{{ photo.image.url }}" rel="shadowbox[photos]"><img src="{{ image.url }}" alt="{{ photo.caption }}" /></a>
-			{% endthumbnail %}
+			<div class="photo">
+				{% thumbnail photo.image "90x90" crop="center" as image %}
+				<p><a href="{{ photo.image.url }}" rel="shadowbox[photos]"><img src="{{ image.url }}" alt="{{ photo.caption }}" /></a></p>
+				{% endthumbnail %}
+				<p>{{ photo.caption }}</p>
+			</div>
 			{% endfor %}
 		</div>
 	</div>

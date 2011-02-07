@@ -440,6 +440,24 @@ a.small {
     width: 550px;
 }
 
+#photos .photo {
+    float: left;
+    display: inline;
+    width: 90px;
+    margin: 0px 10px 15px 10px;
+}
+
+#photos .photo img {
+    float: none;
+    margin: 0px;
+}
+
+#photos .photo p {
+    font-size: 11px;
+    line-height: 13px;
+    text-align: center;
+}
+
 table {
     margin-bottom: 10px;
     border-collapse: collapse;
