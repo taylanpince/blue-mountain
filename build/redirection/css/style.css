@@ -1,0 +1,33 @@
+/*
+ *	Title: Screen CSS Styles for lovewinterturnblue.ca
+ *	Date: December 2, 2010
+ *  Author: Taylan Pince (taylanpince at gmail dot com)
+ */
+
+
+/* @group Global */
+
+body {
+    background-color: #2e4c63;
+    color: #000;
+    font: 16px Helvetica, Verdana, sans-serif;
+}
+
+#Content {
+    width: 75%;
+    margin: 25px auto 0px auto;
+    background-color: #fff;
+    border-radius: 6px;
+    padding: 10px;
+}
+
+p {
+    text-align: center;
+    line-height: 24px;
+}
+
+a {
+    color: #2e4c63;
+}
+
+/* @end */
